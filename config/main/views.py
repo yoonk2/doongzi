@@ -6,6 +6,6 @@ from .models import *
 def index(request):
     posts = Post.objects.all()
     ctx = {
-        'posts': posts
+        'posts': posts,
     }
     return render(request,'index.html', ctx)

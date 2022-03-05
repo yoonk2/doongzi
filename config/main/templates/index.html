@@ -13,7 +13,7 @@
     {% for post in posts %}
         <h1>{{ post.kor_title }}</h1>
         <p>{{ post.kor_content }}</p>
-        <img src="{{ post.image.path }}" alt="">
+        <img src="{{ post.image.url }}" alt="">
     {% endfor %}
 </body>
 </html>
