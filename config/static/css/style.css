@@ -86,7 +86,7 @@ body {
 
 #arrow-left, #arrow-right {
     position: fixed;
-    top: 50%;
+    top: calc(50vh - 57px);
     z-index: 1000;
 }
 
