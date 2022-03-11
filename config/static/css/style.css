@@ -1,0 +1,101 @@
+:root {
+    --doongzi-green: #25E84C;
+    --grid-height: 15.9rem;
+}
+@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
+
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    height: 100vh;
+    font-family: 'Pretendard', 'Noto Sans KR', sans-serif;
+}
+/* 둥사이트 로고 */
+.main__doongsite-logo {
+    position: sticky;
+    left: 50px;
+    top: 50px;
+    z-index: 1000;
+}
+
+/* 그리드선 */
+.grid-lines {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    z-index: -1;
+}
+
+.grid-line {
+    border-top: 1px solid var(--doongzi-green);
+    height: 15.8rem;
+    width: 100vw;
+}
+
+/* 게시글 */
+.post__cont {
+    display: flex;
+    position: absolute;
+}
+
+.post__cont img {
+    height: 29.5rem;
+    border: 1px solid var(--doongzi-green);
+}
+
+.post__title-cont {
+    background-color: var(--doongzi-green);
+    color: white;
+    display: flex;
+    width: fit-content;
+    height: fit-content;
+    padding: 2px 10px;
+}
+
+.post__title-kor {
+    font-size: 1.8rem;
+    /* font-weight: bold; */
+    margin-right: 10px;
+}
+
+.post__title-eng {
+    font-size: 1.2rem;
+}
+.post-1 {
+    left: 25rem;
+    z-index: 10;
+}
+.post-2 {
+    margin-top: calc(var(--grid-height) * 1);
+    margin-left: 60rem;
+    z-index: 9;
+}
+
+.post-3 {
+    margin-top: calc(var(--grid-height) * 4);
+    left: 100rem;
+}
+
+/* 게시글 끝 */
+
+
+/* 화살표 */
+
+#arrow-left, #arrow-right {
+    position: fixed;
+    top: 50%;
+    z-index: 1000;
+}
+
+#arrow-left {
+    left: 0;
+}
+
+#arrow-right {
+    right: 0;
+}
+
+/* 화살표 끝 */

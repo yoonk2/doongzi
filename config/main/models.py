@@ -10,3 +10,6 @@ class Post(models.Model):
     created_at = models.DateTimeField(auto_now_add=True, verbose_name='제작일')
     updated_at = models.DateTimeField(auto_now=True)
     image = models.ImageField(upload_to="image", blank=True)
+
+    def __str__(self):
+        return self.eng_title

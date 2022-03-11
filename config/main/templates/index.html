@@ -7,13 +7,36 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Project Doongzi</title>
+    <link rel="stylesheet" href="{% static 'css/reset.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="shortcut icon" href="{% static 'images/favicon.svg' %}" type="image/x-icon">
 </head>
 <body>
-    Hello Doongzi
+    <img class="main__doongsite-logo" src="{% static 'images/doongzi.svg' %}" alt="Doongzi">
+    <div class="grid-lines">
+        <div class="grid-line"></div>
+        <div class="grid-line"></div>
+        <div class="grid-line"></div>
+        <div class="grid-line"></div>
+        <div class="grid-line"></div>
+        <div class="grid-line"></div>
+    </div>
     {% for post in posts %}
-        <h1>{{ post.kor_title }}</h1>
-        <p>{{ post.kor_content }}</p>
-        <img src="{{ post.image.url }}" alt="">
+    <div class="post__cont post-{{ post.id }}">
+        {% if post.image %}
+        <img class="post__img post__img-{{post.id}}" src="{{ post.image.url }}" alt="{{ post.image.name }}">
+        {% else %}
+        <img class="post__img post__img-{{post.id}}" src="https://placekitten.com/300/300" alt="">
+        {% endif %}
+        <div class="post__title-cont post__title-cont-{{post.id}}">
+            <span class="post__title-kor">{{ post.kor_title }}</span>
+            <span class="post__title-eng">{{ post.eng_title }}</span>
+        </div>
+        <span class="post__content-kor">{{ post.kor_content }}</span>
+        <span class="post__content-eng">{{ post.eng_content }}</span>
+    </div>
     {% endfor %}
+    <img src="{% static 'images/doongzi-arrow-left.svg' %}" alt="" id="arrow-left">
+    <img src="{% static 'images/doongzi-arrow-right.svg' %}" alt="" id="arrow-right">
 </body>
 </html>
