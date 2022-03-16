@@ -13,3 +13,10 @@ class Post(models.Model):
 
     def __str__(self):
         return self.eng_title
+
+class Comment(models.Model):
+    content = models.TextField(verbose_name='내용')
+    created_at = models.DateTimeField(auto_now_add=True, verbose_name='제작일')
+    color = models.CharField(max_length=10, verbose_name='색상', blank=True, null=True)
+    positionX = models.CharField(max_length=10, verbose_name='X위치', blank=True, null=True)
+    positionY = models.CharField(max_length=10, verbose_name='Y위치', blank=True, null=True)

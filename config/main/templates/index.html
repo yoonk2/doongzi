@@ -21,22 +21,44 @@
         <div class="grid-line"></div>
         <div class="grid-line"></div>
     </div>
-    {% for post in posts %}
-    <div class="post__cont post-{{ post.id }}">
-        {% if post.image %}
-        <img class="post__img post__img-{{post.id}}" src="{{ post.image.url }}" alt="{{ post.image.name }}">
-        {% else %}
-        <img class="post__img post__img-{{post.id}}" src="https://placekitten.com/300/300" alt="">
-        {% endif %}
-        <div class="post__title-cont post__title-cont-{{post.id}}">
-            <span class="post__title-kor">{{ post.kor_title }}</span>
-            <span class="post__title-eng">{{ post.eng_title }}</span>
+    <div class="post__visible">
+        <div class="post__wrapper">
+            {% for post in posts %}
+            <div class="post__cont post-{{ post.id }}">
+                {% if post.image %}
+                <img class="post__img post__img-{{post.id}}" src="{{ post.image.url }}" alt="{{ post.image.name }}">
+                {% else %}
+                <img class="post__img post__img-{{post.id}}" src="https://placekitten.com/300/300" alt="">
+                {% endif %}
+                <div class="post__title-cont post__title-cont-{{post.id}}">
+                    <span class="post__title-kor">{{ post.kor_title }}</span>
+                    <span class="post__title-eng">{{ post.eng_title }}</span>
+                </div>
+                <span class="post__content-kor disabled">{{ post.kor_content }}</span>
+                <span class="post__content-eng disabled">{{ post.eng_content }}</span>
+            </div>
+            {% endfor %}
         </div>
-        <span class="post__content-kor">{{ post.kor_content }}</span>
-        <span class="post__content-eng">{{ post.eng_content }}</span>
+        <img src="{% static 'images/doongzi-arrow-left.svg' %}" alt="" id="arrow-left">
+        <img src="{% static 'images/doongzi-arrow-right.svg' %}" alt="" id="arrow-right">
     </div>
-    {% endfor %}
-    <img src="{% static 'images/doongzi-arrow-left.svg' %}" alt="" id="arrow-left">
-    <img src="{% static 'images/doongzi-arrow-right.svg' %}" alt="" id="arrow-right">
+        
+        <!-- 방명록 섹션-->
+    <div class="guestbook">
+        <div class="comment-container">
+            {% for comment in comments %}
+            <span class="comment-text comment-text-{{comment.id}}">
+                {{ comment.content }}
+            </span>
+            {% endfor %}
+        </div>
+        {% csrf_token %}
+        <div class="guestbook__form">
+            <input id="guestbook__input" type="text">
+            <button id="guestbook__submit-btn" onclick="onClickSubmit()"><img class="guestbook__submit-btn-animation" src="{% static 'images/doongzi-symbol-submit.svg' %}" alt=""></button>
+        </div>
+    </div>
+
+    <script type="text/javascript" src="{% static 'js/main.js' %}"></script>
 </body>
 </html>
