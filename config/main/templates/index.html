@@ -45,7 +45,7 @@
     <div class="post__visible scroll-container">
         <div class="post__wrapper">
             {% for post in posts %}
-            <div class="post__cont post-{{ post.id }}">
+            <div class="post__cont post-{{ post.id }}" onclick="showDetail({{ post.id }})">
                 {% if post.image %}
                 <img class="post__img post__img-{{post.id}}" src="{{ post.image.url }}" alt="{{ post.image.name }}">
                 {% else %}
@@ -57,6 +57,25 @@
                 </div>
                 <span class="post__content-kor disabled">{{ post.kor_content }}</span>
                 <span class="post__content-eng disabled">{{ post.eng_content }}</span>
+            </div>
+            <div class="post__detail-container post-detail-{{post.id}}">
+                <div class="post__detail-overlay" onclick="closeDetail()"></div>
+                <div class="post__detail">
+                    {% if post.image %}
+                    <img class="post__img post__img-{{post.id}}" src="{{ post.image.url }}" alt="{{ post.image.name }}">
+                    {% else %}
+                    <img class="post__img post__img-{{post.id}}" src="https://placekitten.com/300/300" alt="">
+                    {% endif %}
+                    <div class="post__detail-text">
+                        <span class="post__title-kor">{{ post.kor_title }}</span>
+                        <span class="post__title-eng">{{ post.eng_title }}</span>
+                        <span class="post__content-kor">{{ post.kor_content }}</span>
+                        <span class="post__content-eng">{{ post.eng_content }}</span>
+                    </div>
+                    <div class="detail__closebtn" onclick="closeDetail()">
+                        <img src="{% static 'images/detail-closebtn.svg' %}" alt="close button">
+                    </div>
+                </div>
             </div>
             {% endfor %}
         </div>

@@ -46,6 +46,7 @@ addComment.onreadystatechange = () => {
 
 // 가로 스크롤
 const scrollContainer = document.querySelector('.scroll-container');
+scrollContainer.scrollLeft = window.innerWidth/2;
 scrollContainer.addEventListener('wheel', (e) => {
     e.preventDefault();
     scrollContainer.scrollLeft += e.deltaY;
@@ -67,4 +68,31 @@ function scrollToLeft() {
         left: currentScrollLeft -= 500,
         behavior: 'smooth'
     });
+}
+
+const detail = document.querySelectorAll(`.post__detail-container`);
+
+const showDetail = (id) => {
+    closeDetail();
+    const postDetail = document.querySelector(`.post-detail-${id}`);
+    postDetail.style.display = 'flex';
+    // posLeft = (window.innerWidth - postDetail.offsetWidth) / 2;
+    // postDetail.style.left = posLeft + 'px';
+    // console.log('posLeft:', posLeft, 'postDetail.offsetWidth:', postDetail.offsetWidth, 'window.innerWidth:', window.innerWidth);
+};
+
+
+// document.querySelector('body').addEventListener('click', () => {
+//     for (let i = 0; i < detail.length; i++) {
+//         if (detail[i].style.display = 'flex') {
+//             closeDetail();
+//         };
+//     }
+// });
+
+const closeDetail = () => {
+    for (let i = 0; i < detail.length; i++) {
+        detail[i].style.display = 'none';
+    }
+    console.log('close!');
 }
