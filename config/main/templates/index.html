@@ -42,7 +42,7 @@
         <div class="grid-line"></div>
         <div class="grid-line"></div>
     </div>
-    <div class="post__visible">
+    <div class="post__visible scroll-container">
         <div class="post__wrapper">
             {% for post in posts %}
             <div class="post__cont post-{{ post.id }}">
@@ -60,8 +60,8 @@
             </div>
             {% endfor %}
         </div>
-        <img src="{% static 'images/doongzi-arrow-left.svg' %}" alt="" id="arrow-left">
-        <img src="{% static 'images/doongzi-arrow-right.svg' %}" alt="" id="arrow-right">
+        <img src="{% static 'images/doongzi-arrow-left.svg' %}" alt="" id="arrow-left" onclick="scrollToLeft()">
+        <img src="{% static 'images/doongzi-arrow-right.svg' %}" alt="" id="arrow-right" onclick="scrollToRight()">
     </div>
         
         <!-- 방명록 섹션-->

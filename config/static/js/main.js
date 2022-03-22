@@ -1,3 +1,5 @@
+// 방명록 ajax
+
 const guestbookInput = document.querySelector(`#guestbook__input`);
 guestbookInput.addEventListener('keyup', (e) => {
     if (e.keyCode === 13) {
@@ -40,4 +42,29 @@ addComment.onreadystatechange = () => {
     if (addComment.readyState === XMLHttpRequest.DONE) {
         commentHandleResponse();
     }
+}
+
+// 가로 스크롤
+const scrollContainer = document.querySelector('.scroll-container');
+scrollContainer.addEventListener('wheel', (e) => {
+    e.preventDefault();
+    scrollContainer.scrollLeft += e.deltaY;
+});
+
+function scrollToRight() {
+    let currentScrollLeft = scrollContainer.scrollLeft;
+    scrollContainer.scrollTo({
+        top: 0,
+        left: currentScrollLeft += 500,
+        behavior: 'smooth'
+    });
+}
+
+function scrollToLeft() {
+    let currentScrollLeft = scrollContainer.scrollLeft;
+    scrollContainer.scrollTo({
+        top: 0,
+        left: currentScrollLeft -= 500,
+        behavior: 'smooth'
+    });
 }
