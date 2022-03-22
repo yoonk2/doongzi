@@ -160,6 +160,7 @@ button {
     flex-direction: column;
     gap: 10px;
     padding: 20px;
+    max-width: 360px;
 }
 
 .post__detail-text .post__title-kor, .post__detail-text .post__title-eng {

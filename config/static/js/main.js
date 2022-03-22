@@ -81,15 +81,6 @@ const showDetail = (id) => {
     // console.log('posLeft:', posLeft, 'postDetail.offsetWidth:', postDetail.offsetWidth, 'window.innerWidth:', window.innerWidth);
 };
 
-
-// document.querySelector('body').addEventListener('click', () => {
-//     for (let i = 0; i < detail.length; i++) {
-//         if (detail[i].style.display = 'flex') {
-//             closeDetail();
-//         };
-//     }
-// });
-
 const closeDetail = () => {
     for (let i = 0; i < detail.length; i++) {
         detail[i].style.display = 'none';
