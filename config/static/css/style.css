@@ -251,7 +251,7 @@ button {
     display: flex;
     padding: 0 20px;
     box-sizing: border-box;
-    animation: upAndDown 5s infinite;
+    animation: upAndDown 10s infinite;
 }
 
 #guestbook__input {
@@ -270,13 +270,13 @@ button {
 
 @keyframes upAndDown {
     0% {
-        transform: translateY(0);
+        top: 10%;
     }
     50% {
-        transform: translateY(-500px);
+        top: 90%;
     }
     100% {
-        transform: translateY(0);
+        top: 10%;
     }
 }
 
@@ -286,7 +286,7 @@ button {
 }
 
 .rotate {
-    animation: rotate 0.5s infinite;
+    animation: rotate 0.5s infinite, changeColor 0.5s infinite;
 }
 
 .scale {
@@ -296,14 +296,25 @@ button {
     rotate {
         0% {
             transform: rotate(10deg);
+            /* -webkit-filter:hue-rotate(0deg); */
         }
         50% {
             transform: rotate(-10deg);
         }
         100% {
             transform: rotate(10deg);
+            /* -webkit-filter:hue-rotate(360deg); */
         }
     }
+
+@keyframes changeColor {
+    from {
+        -webkit-filter:hue-rotate(360deg);
+    }
+    to {
+        -webkit-filter:hue-rotate(0deg);
+    }
+}
 
 @keyframes
     scale {
