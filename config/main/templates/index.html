@@ -94,8 +94,8 @@
         </div>
         {% csrf_token %}
         <div class="guestbook__form">
-            <input id="guestbook__input" type="text">
-            <button id="guestbook__submit-btn" onclick="onClickSubmit()"><img class="guestbook__submit-btn-animation" src="{% static 'images/doongzi-symbol-submit.svg' %}" alt=""></button>
+            <input id="guestbook__input" type="text" placeholder="Click Me 🐥">
+            <button class="rotate" id="guestbook__submit-btn" onclick="onClickSubmit()"><img class="scale" src="{% static 'images/doongzi-symbol-submit.svg' %}" alt=""></button>
         </div>
     </div>
 

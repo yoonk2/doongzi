@@ -31,6 +31,28 @@ button {
     left: 50px;
     top: 50px;
     z-index: 1000;
+    animation: rolling 10s infinite;
+}
+
+@keyframes rolling {
+    0% {
+        transform: rotate(0deg);
+        left: 0%;
+    }
+    25% {
+        transform: rotate(360deg);
+    }
+    50% {
+        transform: rotate(0deg);
+        left: 100%;
+    }
+    75% {
+        transform: rotate(360deg);
+    }
+    100% {
+        transform: rotate(0deg);
+        left: 0%;
+    }
 }
 
 /* 그리드선 */
@@ -167,11 +189,13 @@ button {
     font-size: 2.4rem;
     font-weight: 700;
     text-decoration: underline;
+    line-height: 130%;
 }
 
 .post__detail-text .post__content-kor, .post__detail-text .post__content-eng {
     font-size: 1.8rem;
     font-weight: 500;
+    line-height: 130%;
 }
 
 .detail__closebtn {
@@ -199,10 +223,14 @@ button {
 
 #arrow-left {
     left: 0;
+    cursor: pointer;
+    animation: rotate 0.5s infinite;
 }
 
 #arrow-right {
     right: 0;
+    cursor: pointer;
+    animation: rotate 0.5s infinite;
 }
 
 /* 화살표 끝 */
@@ -223,6 +251,7 @@ button {
     display: flex;
     padding: 0 20px;
     box-sizing: border-box;
+    animation: upAndDown 5s infinite;
 }
 
 #guestbook__input {
@@ -235,26 +264,75 @@ button {
     box-sizing: border-box;
 }
 
+#guestbook__input::placeholder{
+    color: var(--doongzi-green);
+}
+
+@keyframes upAndDown {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-500px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
 #guestbook__submit-btn {
     height: 6.8rem;
     width: 6.8rem;
 }
+
+.rotate {
+    animation: rotate 0.5s infinite;
+}
+
+.scale {
+    animation: scale 0.3s infinite;
+}
 @keyframes
-    guestbook__submit-btn-animation {
+    rotate {
         0% {
-            transform: scale(1);
-            /* transform: rotate(10deg); */
+            transform: rotate(10deg);
         }
         50% {
-            transform: scale(1.1);
-            /* transform: rotate(-10deg); */
+            transform: rotate(-10deg);
         }
         100% {
-            transform: scale(1);
-            /* transform: rotate(10deg); */
+            transform: rotate(10deg);
         }
     }
 
+@keyframes
+    scale {
+        0% {
+            transform: scale(1);
+        }
+        50% {
+            transform: scale(1.2);
+        }
+        100% {
+            transform: scale(1);
+        }
+    }
+@-webkit-keyframes
+    rotate {
+        0% {
+            transform: rotate(10deg);
+        }
+        50% {
+            transform: rotate(-10deg);
+        }
+        100% {
+            transform: rotate(10deg);
+        }
+    }
+
+#guestbook__submit-btn:hover {
+    animation: none;
+}
 
 .comment-container {
     font-size: 30px;
