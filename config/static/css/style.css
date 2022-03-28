@@ -28,32 +28,76 @@ button {
 /* 둥사이트 로고 */
 .main__doongsite-logo {
     position: sticky;
-    left: 50px;
-    top: 50px;
+    /* left: -50px; */
+    padding-top: 50px;
     z-index: 1000;
-    animation: rolling 10s infinite;
 }
 
-@keyframes rolling {
+.rotate-animation {
+    animation: rotateAnimation 3s linear infinite;
+}
+
+.move-animation {
+    animation: moveAnimation 20s linear infinite alternate;
+}
+
+@keyframes rotateAnimation {
     0% {
         transform: rotate(0deg);
-        left: 0%;
+        left: -50px;
     }
     25% {
-        transform: rotate(360deg);
+        left: calc(100vw+50px);
     }
     50% {
-        transform: rotate(0deg);
-        left: 100%;
+        left: -50px;
     }
     75% {
-        transform: rotate(360deg);
+        left: calc(100vw+50px);
     }
     100% {
-        transform: rotate(0deg);
-        left: 0%;
+        transform: rotate(360deg);
+        left: -50px;
     }
 }
+
+@keyframes moveAnimation {
+    0% {
+        transform: translate(0px, 0px);
+    }
+    19% {
+        transform: translate(calc(100vw + 200px), 0px);
+    }
+    20% {
+        transform: translate(calc(100vw + 200px), var(--grid-height));
+    }
+    39% {
+        transform: translate(-200px, var(--grid-height));
+    }
+    40% {
+        transform: translate(-200px, calc(var(--grid-height) * 2));
+    }
+    59% {
+        transform: translate(calc(100vw + 200px), calc(var(--grid-height) * 2));
+    }
+    60% {
+        transform: translate(calc(100vw + 200px), calc(var(--grid-height) * 3));
+    }
+    79% {
+        transform: translate(-200px, calc(var(--grid-height) * 3));
+    }
+    80% {
+        transform: translate(-200px, calc(var(--grid-height) * 4));
+    }
+    99% {
+        transform: translate(calc(100vw + 200px), calc(var(--grid-height) * 4));
+    }
+    100% {
+        transform: translate(calc(100vw + 200px), calc(var(--grid-height) * 5));
+    }    
+}
+    
+
 
 /* 그리드선 */
 .grid-lines {
@@ -196,6 +240,8 @@ button {
     font-size: 1.8rem;
     font-weight: 500;
     line-height: 130%;
+    word-break: keep-all;
+    white-space: pre-wrap;
 }
 
 .detail__closebtn {
