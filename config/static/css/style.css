@@ -37,8 +37,17 @@ button {
     animation: rotateAnimation 3s linear infinite;
 }
 
+.rotate-animation:hover {
+    animation-play-state: paused;
+    background-color: red;
+}
+
 .move-animation {
     animation: moveAnimation 20s linear infinite alternate;
+}
+
+.move-animation:hover {
+    animation-play-state: paused;
 }
 
 @keyframes rotateAnimation {
@@ -279,6 +288,10 @@ button {
     animation: rotate 0.5s infinite;
 }
 
+#arrow-right:hover, #arrow-left:hover {
+    animation-play-state: paused;
+}
+
 /* 화살표 끝 */
 
 
@@ -333,6 +346,10 @@ button {
 
 .rotate {
     animation: rotate 0.5s infinite, changeColor 0.5s infinite;
+}
+
+.rotate:hover {
+    animation: paused;
 }
 
 .scale {
@@ -403,3 +420,9 @@ button {
 }
 
 /* 방명록 끝 */
+
+@media screen and (max-width: 1200px) {
+    .post__detail-text {
+        max-width: 100%;
+    }
+}
