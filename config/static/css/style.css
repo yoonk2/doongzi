@@ -224,6 +224,10 @@ button {
     position: fixed;
 }
 
+.post__detail-1 {
+    display: flex;
+}
+
 .post__detail img {
     height: calc(var(--grid-height) * 4);
     border: 1px solid var(--doongzi-green);
@@ -236,6 +240,12 @@ button {
     gap: 10px;
     padding: 20px;
     max-width: 360px;
+}
+
+.detail-title, .detail-content {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
 }
 
 .post__detail-text .post__title-kor, .post__detail-text .post__title-eng {
@@ -254,8 +264,8 @@ button {
 }
 
 .detail__closebtn {
-    height: 26px;
-    width: 26px;
+    height: 30px;
+    width: 30px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -263,8 +273,8 @@ button {
 }
 
 .detail__closebtn img {
-    height: 15px;
-    width: 15px;
+    height: 20px;
+    width: 20px;
 }
 /* 게시글 디테일 끝 */
 
@@ -422,7 +432,33 @@ button {
 /* 방명록 끝 */
 
 @media screen and (max-width: 1200px) {
+    .post__detail {
+        width: 70vw;
+    }
+
+    .post__detail-1{
+        width: 100%;
+    }
+
+    .post__detail-1 {
+        flex-direction: column;
+    }
+
+    .post__detail-1 img {
+        height: auto;
+        border: 1px solid var(--doongzi-green);
+    }
+
     .post__detail-text {
-        max-width: 100%;
+        max-width: none;
+        flex-direction: row;
+    }
+
+    .post__detail-text .post__title-kor, .post__detail-text .post__title-eng {
+        font-size: 1.8rem;
+    }
+
+    .post__content-kor, .post__content-eng {
+        font-size: 1.4rem;
     }
 }
