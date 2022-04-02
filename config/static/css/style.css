@@ -26,6 +26,12 @@ button {
 }
 
 /* 둥사이트 로고 */
+.logo-container {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+}
+
 .main__doongsite-logo {
     position: sticky;
     /* left: -50px; */
@@ -169,10 +175,12 @@ button {
     font-size: 1.8rem;
     /* font-weight: bold; */
     margin-right: 10px;
+    width: max-content;
 }
 
 .post__title-eng {
     font-size: 1.2rem;
+    width: max-content;
 }
 .post-1 {
     left: 25rem;
@@ -197,6 +205,58 @@ button {
     top: 3px;
 }
 
+.post-5 {
+    left: 5rem;
+    margin-top: calc(var(--grid-height) * 2);
+    top: 2px;
+}
+
+.post-6 {
+    left: 280rem;
+    margin-top: calc(var(--grid-height) * 1);
+    top: 1px;
+}
+
+.post-7 {
+    left: 120rem;
+    margin-top: calc(var(--grid-height) * 2);
+    top: 2px;
+}
+
+.post-8 {
+    left: 240rem;
+    margin-top: calc(var(--grid-height) * 3);
+    top: 3px;
+}
+
+.post-9 {
+    left: 19rem;
+    margin-top: calc(var(--grid-height) * 4);
+    top: 4px;
+}
+
+.post-10 {
+    left: 168rem;
+    margin-top: calc(var(--grid-height) * 1);
+    top: 1px;
+}
+
+.post-11 {
+    left: 100rem;
+    margin-top: calc(var(--grid-height) * 4);
+    top: 4px;
+}
+
+.post-12 {
+    left: 158rem;
+    margin-top: calc(var(--grid-height) * 4);
+    top: 4px;
+}
+
+.post-13 {
+    left: 250rem;
+}
+
 /* 게시글 끝 */
 
 /* 게시글 디테일 */
@@ -205,14 +265,14 @@ button {
     position: fixed;
     display: none;
     z-index: 10000;
-    width: 100%;
-    height: 100%;
+    width: 100vw;
+    height: 100vh;
     justify-content: center;
 }
 
 .post__detail-overlay {
-    width: 100%;
-    height: 100%;
+    width: 100vw;
+    height: 100vh;
     position: absolute;
 }
 
@@ -224,9 +284,17 @@ button {
     position: fixed;
 }
 
-.post__detail img {
+.post__detail-1 {
+    display: flex;
+}
+
+.post__detail img, .post__detail iframe {
     height: calc(var(--grid-height) * 4);
     border: 1px solid var(--doongzi-green);
+}
+
+.post__detail iframe {
+    width: 1056px;
 }
 
 .post__detail-text {
@@ -238,24 +306,30 @@ button {
     max-width: 360px;
 }
 
+.detail-title, .detail-content {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
 .post__detail-text .post__title-kor, .post__detail-text .post__title-eng {
     font-size: 2.4rem;
     font-weight: 700;
     text-decoration: underline;
-    line-height: 130%;
+    line-height: 150%;
 }
 
 .post__detail-text .post__content-kor, .post__detail-text .post__content-eng {
     font-size: 1.8rem;
     font-weight: 500;
-    line-height: 130%;
+    line-height: 150%;
     word-break: keep-all;
     white-space: pre-wrap;
 }
 
 .detail__closebtn {
-    height: 26px;
-    width: 26px;
+    height: 30px;
+    width: 30px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -263,8 +337,8 @@ button {
 }
 
 .detail__closebtn img {
-    height: 15px;
-    width: 15px;
+    height: 20px;
+    width: 20px;
 }
 /* 게시글 디테일 끝 */
 
@@ -353,7 +427,7 @@ button {
 }
 
 .scale {
-    animation: scale 0.3s infinite;
+    animation: scale 0.5s infinite;
 }
 @keyframes
     rotate {
@@ -422,7 +496,160 @@ button {
 /* 방명록 끝 */
 
 @media screen and (max-width: 1200px) {
+    .post__detail {
+        width: 70vw;
+    }
+
+    .post__detail-1{
+        width: 100%;
+    }
+
+    .post__detail-1 {
+        flex-direction: column;
+    }
+
+    .post__detail-1 img {
+        height: auto;
+        border: 1px solid var(--doongzi-green);
+    }
+
+    .post__detail-1 iframe {
+        height: 37vw;
+        width: 100%;
+    }
+
     .post__detail-text {
-        max-width: 100%;
+        max-width: none;
+        flex-direction: row;
+    }
+
+    .detail-title {
+        min-width: 16vw;
+    }
+
+    .post__detail-text .post__title-kor, .post__detail-text .post__title-eng {
+        font-size: 1.8rem;
+    }
+
+    .post__detail-text .post__content-kor, .post__detail-text .post__content-eng {
+        font-size: 1.4rem;
+    }
+}
+
+/* 모바일 */
+@media screen and (max-width: 900px) {
+    .post__detail-text {
+        max-width: none;
+        flex-direction: column;
+    }
+
+    .detail-content, .detail-title {
+        gap: 0;
+    }
+
+    .guestbook__form {
+        animation: none;
+    }
+
+    .rotate {
+        animation: none;
+    }
+
+    .post__cont img {
+        height: 10.7rem;
+    }
+    
+    .guestbook__form {
+        bottom: 40px;
+        height: 6rem;
+    }
+
+    #guestbook__input {
+        font-size: 2.2rem;
+    }
+
+    .scale {
+        height: 5rem;
+    }
+
+    #arrow-left, #arrow-right {
+        height: 90px;
+    }
+
+
+    /* 게시물 포지션 */
+    .post-1 {
+        left: 14rem;
+        z-index: 10;
+    }
+    .post-2 {
+        margin-top: calc(var(--grid-height) * 1);
+        margin-left: 30rem;
+        z-index: 9;
+        top: 1px;
+    }
+    
+    .post-3 {
+        margin-top: calc(var(--grid-height) * 4);
+        left: 50rem;
+        top: 4px;
+    }
+    
+    .post-4 {
+        margin-top: calc(var(--grid-height) * 3);
+        left: 100rem;
+        top: 3px;
+    }
+
+    .post-5 {
+        left: 5rem;
+        margin-top: calc(var(--grid-height) * 2);
+        top: 2px;
+    }
+
+    .post-6 {
+        left: 140rem;
+        margin-top: calc(var(--grid-height) * 1);
+        top: 1px;
+    }
+    
+    .post-7 {
+        left: 60rem;
+        margin-top: calc(var(--grid-height) * 2);
+        top: 2px;
+    }
+    
+    .post-8 {
+        left: 120rem;
+        margin-top: calc(var(--grid-height) * 3);
+        top: 3px;
+    }
+    
+    .post-9 {
+        left: 10rem;
+        margin-top: calc(var(--grid-height) * 4);
+        top: 4px;
+    }
+    
+    .post-10 {
+        left: 84rem;
+        margin-top: calc(var(--grid-height) * 1);
+        top: 1px;
+    }
+    
+    .post-11 {
+        left: 50rem;
+        margin-top: calc(var(--grid-height) * 4);
+        top: 4px;
+    }
+    
+    .post-12 {
+        left: 79rem;
+        margin-top: calc(var(--grid-height) * 4);
+        top: 4px;
+    }
+    
+    .post-13 {
+        left: 125rem;
     }
 }

@@ -9,6 +9,7 @@ class Post(models.Model):
     eng_content = models.TextField(verbose_name='영어 내용')
     created_at = models.DateTimeField(auto_now_add=True, verbose_name='제작일')
     updated_at = models.DateTimeField(auto_now=True)
+    iframe = models.TextField(verbose_name='iframe', blank=True)
     image = models.ImageField(upload_to="image", blank=True)
 
     def __str__(self):

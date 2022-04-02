@@ -33,8 +33,10 @@
     <link rel="shortcut icon" href="{% static 'images/favicon.svg' %}" type="image/x-icon">
 </head>
 <body>
-    <div class="move-animation">
-        <img class="main__doongsite-logo rotate-animation" src="{% static 'images/doongzi.svg' %}" alt="Doongzi">
+    <div class="logo-container">
+        <div class="move-animation">
+            <img class="main__doongsite-logo rotate-animation" src="{% static 'images/doongzi.svg' %}" alt="Doongzi">
+        </div>
     </div>
     <div class="grid-lines">
         <div class="grid-line"></div>
@@ -87,19 +89,29 @@
     <div class="post__detail-container post-detail-{{post.id}}">
         <div class="post__detail-overlay" onclick="closeDetail()"></div>
         <div class="post__detail">
-            {% if post.image %}
-            <img class="post__img post__img-{{post.id}}" src="{{ post.image.url }}" alt="{{ post.image.name }}">
-            {% else %}
-            <img class="post__img post__img-{{post.id}}" src="https://placekitten.com/300/300" alt="">
-            {% endif %}
-            <div class="post__detail-text">
-                <span class="post__title-kor">{{ post.kor_title }}</span>
-                <span class="post__title-eng">{{ post.eng_title }}</span>
-                <span class="post__content-kor">{{ post.kor_content }}</span>
-                <span class="post__content-eng">{{ post.eng_content }}</span>
+            <div class="post__detail-1">
+                {% if post.iframe %}
+                <iframe class="post__img post__img-{{post.id}}" src="{{ post.iframe }}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                {% elif post.image %}
+                <img class="post__img post__img-{{post.id}}" src="{{ post.image.url }}" alt="{{ post.image.name }}">
+                {% else %}
+                <img class="post__img post__img-{{post.id}}" src="https://placekitten.com/300/300" alt="">
+                {% endif %}
+                <div class="post__detail-text">
+                    <div class="detail-title">
+                        <span class="post__title-kor">{{ post.kor_title }}</span>
+                        <span class="post__title-eng">{{ post.eng_title }}</span>
+                    </div>
+                    <div class="detail-content">
+                        <span class="post__content-kor">{{ post.kor_content }}</span>
+                        <span class="post__content-eng">{{ post.eng_content }}</span>
+                    </div>
+                </div>
             </div>
-            <div class="detail__closebtn" onclick="closeDetail()">
-                <img src="{% static 'images/detail-closebtn.svg' %}" alt="close button">
+            <div class="post__detail-2">
+                <div class="detail__closebtn" onclick="closeDetail()">
+                    <img src="{% static 'images/detail-closebtn.svg' %}" alt="close button">
+                </div>
             </div>
         </div>
     </div>
