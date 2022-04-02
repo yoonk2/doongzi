@@ -33,8 +33,10 @@
     <link rel="shortcut icon" href="{% static 'images/favicon.svg' %}" type="image/x-icon">
 </head>
 <body>
-    <div class="move-animation">
-        <img class="main__doongsite-logo rotate-animation" src="{% static 'images/doongzi.svg' %}" alt="Doongzi">
+    <div class="logo-container">
+        <div class="move-animation">
+            <img class="main__doongsite-logo rotate-animation" src="{% static 'images/doongzi.svg' %}" alt="Doongzi">
+        </div>
     </div>
     <div class="grid-lines">
         <div class="grid-line"></div>
@@ -88,7 +90,9 @@
         <div class="post__detail-overlay" onclick="closeDetail()"></div>
         <div class="post__detail">
             <div class="post__detail-1">
-                {% if post.image %}
+                {% if post.iframe %}
+                <iframe class="post__img post__img-{{post.id}}" src="{{ post.iframe }}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                {% elif post.image %}
                 <img class="post__img post__img-{{post.id}}" src="{{ post.image.url }}" alt="{{ post.image.name }}">
                 {% else %}
                 <img class="post__img post__img-{{post.id}}" src="https://placekitten.com/300/300" alt="">
