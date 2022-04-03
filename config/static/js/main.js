@@ -98,3 +98,8 @@ guestbookInput.addEventListener('focus', () => {
     guestbookForm.style.marginTop = `calc(var(--grid-height)*2)`;
     console.log('focus');
 });
+
+guestbookInput.addEventListener('blur', () => {
+    guestbookForm.style.marginTop = `calc(var(--grid-height)*5)`;
+    console.log('blur');
+});
