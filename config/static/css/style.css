@@ -334,6 +334,7 @@ button {
     justify-content: center;
     align-items: center;
     background-color: var(--doongzi-green);
+    z-index: 10002;
 }
 
 .detail__closebtn img {
@@ -492,7 +493,11 @@ button {
     height: 100vh;
     top: 0;
     z-index: -1;
-    overflow: scroll;
+    overflow: ;
+}
+
+.comment-text {
+    max-width: 24rem;
 }
 
 /* 방명록 끝 */
@@ -516,11 +521,17 @@ button {
     .post__detail-1 img {
         height: auto;
         border: 1px solid var(--doongzi-green);
+        max-height: 100vw;
+        object-fit: contain;
+        background-color: white;
     }
 
     .post__detail-1 iframe {
         height: 56vw;
         width: 100%;
+        max-height: 100vw;
+        object-fit: contain;
+        background-color: white;
     }
 
     .post__detail-text {
@@ -590,6 +601,7 @@ button {
     /* 방명록들 */
     .comment-container {
         font-size: 2.6rem;
+        align-items: ;
     }
 
     /* 게시물 포지션 */
