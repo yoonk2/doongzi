@@ -95,11 +95,15 @@ const guestbookForm = document.querySelector(`.guestbook__form`);
 
 
 guestbookInput.addEventListener('focus', () => {
-    guestbookForm.style.marginTop = `calc(var(--grid-height)*2)`;
-    console.log('focus');
+    if (window.innerWidth < 768) {
+        guestbookForm.style.marginTop = `calc(var(--grid-height)*2)`;
+    }
+    // console.log('focus');
 });
 
 guestbookInput.addEventListener('blur', () => {
+    if (window.innerWidth < 768) {
     guestbookForm.style.marginTop = `calc(var(--grid-height)*5)`;
-    console.log('blur');
+    }
+    // console.log('blur');
 });

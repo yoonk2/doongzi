@@ -589,7 +589,7 @@ button {
 
 
 /* 모바일 */
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 768px) {
     .post__detail-text {
         max-width: none;
         flex-direction: column;
@@ -615,6 +615,7 @@ button {
         top: -1rem;
         margin-top: calc(var( --grid-height)*5);
         height: 6rem;
+        transition: 0.5s;
     }
 
     #guestbook__input {
