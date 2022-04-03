@@ -87,3 +87,14 @@ const closeDetail = () => {
     }
     console.log('close!');
 }
+
+
+// 방명록폼 위치이동
+
+const guestbookForm = document.querySelector(`.guestbook__form`);
+
+
+guestbookInput.addEventListener('focus', () => {
+    guestbookForm.style.marginTop = `calc(var(--grid-height)*2)`;
+    console.log('focus');
+});
