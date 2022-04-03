@@ -304,6 +304,7 @@ button {
     gap: 10px;
     padding: 20px;
     max-width: 360px;
+    box-shadow: 0px 7px 25px 5px rgb(37 232 76 / 50%);
 }
 
 .detail-title, .detail-content {
@@ -325,6 +326,18 @@ button {
     line-height: 150%;
     word-break: keep-all;
     white-space: pre-wrap;
+}
+
+.post__content-url {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    color: black;
+}
+
+.post__content-url:hover {
+    cursor: pointer;
+    color: white;
 }
 
 .detail__closebtn {
@@ -491,9 +504,10 @@ button {
     flex-direction: column;
     width: 100vw;
     height: 100vh;
+    max-height: -webkit-fill-available;
     top: 0;
     z-index: -1;
-    overflow: ;
+    overflow-y: hidden;
 }
 
 .comment-text {
@@ -539,7 +553,18 @@ button {
         flex-direction: row;
         overflow: scroll;
         max-height: 100%;
+        overflow-x: hidden;
     }
+    .post__detail-text::-webkit-scrollbar {
+        display: none;
+    }
+
+      /* Hide scrollbar for IE, Edge and Firefox */
+    .post__detail-text {
+        -ms-overflow-style: none;  /* IE and Edge */
+        scrollbar-width: none;  /* Firefox */
+    }
+
 
     .detail__closebtn {
         margin-left: -30px;
@@ -582,12 +607,14 @@ button {
     }
     
     .guestbook__form {
-        bottom: 40px;
+        top: 56px;
+        margin-top: calc(var(--grid-height)*5);
         height: 6rem;
     }
 
     #guestbook__input {
         font-size: 2.2rem;
+        padding: 0.5rem;
     }
 
     .scale {
@@ -601,7 +628,7 @@ button {
     /* 방명록들 */
     .comment-container {
         font-size: 2.6rem;
-        align-items: ;
+        align-content: flex-end;
     }
 
     /* 게시물 포지션 */

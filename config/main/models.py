@@ -11,6 +11,7 @@ class Post(models.Model):
     updated_at = models.DateTimeField(auto_now=True)
     iframe = models.TextField(verbose_name='iframe', blank=True)
     image = models.ImageField(upload_to="image", blank=True)
+    url = models.URLField(verbose_name='url', blank=True)
 
     def __str__(self):
         return self.eng_title
