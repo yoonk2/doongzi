@@ -535,8 +535,8 @@ button {
     .post__detail-1 img {
         height: auto;
         border: 1px solid var(--doongzi-green);
-        max-height: 100vw;
-        object-fit: contain;
+        /* max-height: 100vw; */
+        /* object-fit: cover; */
         background-color: white;
     }
 
