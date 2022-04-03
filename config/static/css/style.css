@@ -334,6 +334,7 @@ button {
     justify-content: center;
     align-items: center;
     background-color: var(--doongzi-green);
+    z-index: 10002;
 }
 
 .detail__closebtn img {
@@ -488,12 +489,11 @@ button {
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
-    align-content: flex-end;
     width: 100vw;
     height: 100vh;
     top: 0;
     z-index: -1;
-    overflow: scroll;
+    overflow: ;
 }
 
 .comment-text {
@@ -601,6 +601,7 @@ button {
     /* 방명록들 */
     .comment-container {
         font-size: 2.6rem;
+        align-items: ;
     }
 
     /* 게시물 포지션 */
