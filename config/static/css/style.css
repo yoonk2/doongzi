@@ -611,9 +611,8 @@ button {
     }
     
     .guestbook__form {
-        /* top: 50px; */
-        top: calc(var(--grid-height)*0.5);
-        margin-top: calc(var(--grid-height)*5);
+        top: -1rem;
+        margin-top: calc(var( --grid-height)*5);
         height: 6rem;
     }
 
