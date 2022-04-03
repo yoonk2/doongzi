@@ -535,9 +535,9 @@ button {
     .post__detail-1 img {
         height: auto;
         border: 1px solid var(--doongzi-green);
-        /* max-height: 100vw; */
-        /* object-fit: cover; */
-        background-color: white;
+        max-height: 100vw;
+        object-fit: contain;
+        background-color: var(--doongzi-green);
     }
 
     .post__detail-1 iframe {
