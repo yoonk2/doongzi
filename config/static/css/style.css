@@ -120,7 +120,7 @@ button {
     flex-direction: column;
     position: fixed;
     z-index: -1;
-    top: 50px;
+    top: 5rem;
 }
 
 .grid-line {
@@ -137,7 +137,7 @@ button {
 }
 
 .post__visible {
-    padding-top: 50px;
+    padding-top: 5rem;
     height: 100vh;
     width: 100vw;
     overflow-x: scroll;
@@ -583,6 +583,10 @@ button {
     }
 }
 
+
+
+
+
 /* 모바일 */
 @media screen and (max-width: 900px) {
     .post__detail-text {
@@ -607,7 +611,7 @@ button {
     }
     
     .guestbook__form {
-        top: 56px;
+        /* top: 50px; */
         margin-top: calc(var(--grid-height)*5);
         height: 6rem;
     }
@@ -627,7 +631,7 @@ button {
 
     /* 방명록들 */
     .comment-container {
-        font-size: 2.6rem;
+        font-size: 2.2rem;
         align-content: flex-end;
     }
 
