@@ -91,7 +91,7 @@
         <div class="post__detail">
             <div class="post__detail-1">
                 {% if post.iframe %}
-                <iframe class="post__img post__img-{{post.id}}" src="{{ post.iframe }}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                {{ post.iframe }}
                 {% elif post.image %}
                 <img class="post__img post__img-{{post.id}}" src="{{ post.image.url }}" alt="{{ post.image.name }}">
                 {% else %}
