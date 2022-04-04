@@ -195,7 +195,7 @@ button {
 
 .post-3 {
     margin-top: calc(var(--grid-height) * 4);
-    left: 100rem;
+    left: 85rem;
     top: 4px;
 }
 
@@ -218,7 +218,7 @@ button {
 }
 
 .post-7 {
-    left: 120rem;
+    left: 102rem;
     margin-top: calc(var(--grid-height) * 2);
     top: 2px;
 }
@@ -242,7 +242,7 @@ button {
 }
 
 .post-11 {
-    left: 160rem;
+    left: 300rem;
     margin-top: calc(var(--grid-height) * 4);
     top: 4px;
 }
@@ -653,7 +653,7 @@ button {
     
     .post-3 {
         margin-top: calc(var(--grid-height) * 4);
-        left: 50rem;
+        left: 42rem;
         top: 4px;
     }
     
@@ -676,7 +676,7 @@ button {
     }
     
     .post-7 {
-        left: 60rem;
+        left: 51rem;
         margin-top: calc(var(--grid-height) * 2);
         top: 2px;
     }
@@ -700,7 +700,7 @@ button {
     }
     
     .post-11 {
-        left: 80rem;
+        left: 150rem;
         margin-top: calc(var(--grid-height) * 4);
         top: 4px;
     }
