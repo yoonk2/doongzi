@@ -500,7 +500,7 @@ button {
 .comment-container {
     font-size: 30px;
     position: absolute;
-    display: flex;
+    /* display: flex; */
     flex-wrap: wrap;
     flex-direction: column;
     width: 100vw;
@@ -513,6 +513,11 @@ button {
 
 .comment-text {
     max-width: 24rem;
+    position: absolute;
+}
+
+.comment-container :last-child {
+    text-shadow: 0px 0px 8px rgb(37 232 76 / 80%);
 }
 
 /* 방명록 끝 */

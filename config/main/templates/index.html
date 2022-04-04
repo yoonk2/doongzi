@@ -73,7 +73,7 @@
     <div class="guestbook">
         <div class="comment-container">
             {% for comment in comments %}
-            <span class="comment-text comment-text-{{comment.id}}">
+            <span class="comment-text comment-text-{{comment.id}}" style="left: {{comment.positionX}}vw; top:{{comment.positionY}}vh">
                 {{ comment.content }}
             </span>
             {% endfor %}

@@ -27,5 +27,8 @@ def comment_ajax(request):
     comment = Comment(content=content)
     comment.save()
     id = comment.id
+    color = comment.color
+    positionX = comment.positionX
+    positionY = comment.positionY
 
-    return JsonResponse({'content': content, 'id': id })
+    return JsonResponse({'content': content, 'id': id, 'color': color, 'positionX': positionX, 'positionY': positionY})

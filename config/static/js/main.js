@@ -20,14 +20,19 @@ const onClickSubmit = () => {
     }
 const commentHandleResponse = () => {
     if (addComment.status < 400){
-        const {content, id} = JSON.parse(addComment.response);
+        const {content, id, color, positionX, positionY} = JSON.parse(addComment.response);
         const commentContainer = document.querySelector(`.comment-container`);
         // const newCommentParent = document.createElement('div');
         console.log('addcomment')
         currentHtml = commentContainer.innerHTML
+        const commentText = document.querySelectorAll(`.comment-text`);
+        console.log('before', commentContainer.innerHTML);
+        commentText[commentText.length-1].style.textShadow = 'none';
         commentContainer.innerHTML = currentHtml + `
-            <span class="comment-text comment-text-${id}">${content}</span>
+            <span class="comment-text comment-text-${id}" style="color: ${color} left: ${positionX}vw; top:${positionY}vh>${content}</span>
         `;
+        console.log('after', commentContainer.innerHTML);
+        commentText[commentText.length-1].style.textShadow = '0px 0px 8px rgb(37 232 76 / 80%)';
         // const newComment = newCommentParent.firstElementChild;
         // console.log(commentContainer);
         // console.log(newComment);
@@ -107,3 +112,20 @@ guestbookInput.addEventListener('blur', () => {
     }
     // console.log('blur');
 });
+
+// 방명록 텍스트 위치 설정
+
+// const commentText = document.querySelectorAll(`.comment-text`);
+// for (let i = 0; i < commentText.length; i++) {
+
+//     thisComment(commentText[i]);
+//     randomTop = getRandomNumber(0, winHeight);
+//     randomLeft = getRandomNumber(0, winWidth);
+
+//     thisDiv.style.top = randomTop +"px";
+//     thisDiv.style.left = randomLeft +"px";
+// }
+
+// function getRandomNumber(min, max) {    
+//     return Math.random() * (max - min) + min;
+// }
