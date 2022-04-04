@@ -14,7 +14,7 @@ class Post(models.Model):
     url = models.URLField(verbose_name='url', blank=True)
 
     def __str__(self):
-        return self.eng_title
+        return self.kor_title
 
 class Comment(models.Model):
     content = models.TextField(verbose_name='내용')
@@ -22,3 +22,6 @@ class Comment(models.Model):
     color = models.CharField(max_length=10, verbose_name='색상', blank=True, null=True)
     positionX = models.CharField(max_length=10, verbose_name='X위치', blank=True, null=True)
     positionY = models.CharField(max_length=10, verbose_name='Y위치', blank=True, null=True)
+
+    def __str__(self):
+        return self.content
