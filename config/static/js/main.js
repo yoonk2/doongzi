@@ -23,7 +23,7 @@ const commentHandleResponse = () => {
         const {content, id} = JSON.parse(addComment.response);
         const commentContainer = document.querySelector(`.comment-container`);
         // const newCommentParent = document.createElement('div');
-        console.log('addcomment')
+        // console.log('addcomment')
         currentHtml = commentContainer.innerHTML
         commentContainer.innerHTML = currentHtml + `
             <span class="comment-text comment-text-${id}">${content}</span>
@@ -85,7 +85,7 @@ const closeDetail = () => {
     for (let i = 0; i < detail.length; i++) {
         detail[i].style.display = 'none';
     }
-    console.log('close!');
+    // console.log('close!');
 }
 
 

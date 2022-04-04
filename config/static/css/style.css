@@ -242,7 +242,7 @@ button {
 }
 
 .post-11 {
-    left: 100rem;
+    left: 160rem;
     margin-top: calc(var(--grid-height) * 4);
     top: 4px;
 }
@@ -656,9 +656,9 @@ button {
     }
     
     .post-4 {
-        margin-top: calc(var(--grid-height) * 3);
-        left: 100rem;
-        top: 3px;
+        /* margin-top: calc(var(--grid-height) * 3); */
+        left: 220rem;
+        /* top: 3px; */
     }
 
     .post-5 {
@@ -698,7 +698,7 @@ button {
     }
     
     .post-11 {
-        left: 50rem;
+        left: 80rem;
         margin-top: calc(var(--grid-height) * 4);
         top: 4px;
     }
