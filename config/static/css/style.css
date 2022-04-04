@@ -49,7 +49,7 @@ button {
 }
 
 .move-animation {
-    animation: moveAnimation 20s linear infinite alternate;
+    animation: moveAnimation 30s linear infinite alternate;
 }
 
 .move-animation:hover {
@@ -517,7 +517,7 @@ button {
 
 /* 방명록 끝 */
 
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 900px) {
     .post__detail {
         width: 100vw;
         top: 51px;
