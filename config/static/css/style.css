@@ -288,6 +288,8 @@ button {
 .post__detail-1 {
     display: flex;
     background-color: white;
+    box-shadow: 0px 7px 25px 5px rgb(37 232 76 / 50%);
+    border: 1px solid var(--doongzi-green);
 }
 
 .post__detail img, .post__detail iframe {
@@ -307,7 +309,7 @@ button {
     gap: 10px;
     padding: 20px;
     max-width: 360px;
-    box-shadow: 0px 7px 25px 5px rgb(37 232 76 / 50%);
+    /* box-shadow: 0px 7px 25px 5px rgb(37 232 76 / 50%); */
 }
 
 .detail-title, .detail-content {
