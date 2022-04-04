@@ -287,12 +287,14 @@ button {
 
 .post__detail-1 {
     display: flex;
+    background-color: white;
 }
 
 .post__detail img, .post__detail iframe {
     height: calc(var(--grid-height) * 4);
     border: 1px solid var(--doongzi-green);
 }
+
 
 .post__detail iframe {
     width: 1056px;
@@ -542,7 +544,7 @@ button {
     }
 
     .post__detail-1 iframe {
-        height: 56vw;
+        /* height: 56vw; */
         width: 100%;
         max-height: 100vw;
         object-fit: contain;
