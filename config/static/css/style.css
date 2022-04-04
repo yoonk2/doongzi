@@ -200,9 +200,9 @@ button {
 }
 
 .post-4 {
-    margin-top: calc(var(--grid-height) * 3);
+    /* margin-top: calc(var(--grid-height) * 3); */
     left: 200rem;
-    top: 3px;
+    /* top: 3px; */
 }
 
 .post-5 {
