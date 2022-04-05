@@ -502,7 +502,7 @@ button {
 }
 
 .comment-container {
-    font-size: 30px;
+    font-size: 2.4rem;
     position: absolute;
     display: flex;
     flex-wrap: wrap;
