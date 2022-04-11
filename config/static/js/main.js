@@ -1,5 +1,7 @@
 if (window.innerWidth < 768) { 
     document.querySelector('body').style.height = Window.innerHeight + 'px';
+    document.querySelector('.comment-container').style.height = Window.innerHeight + 'px';
+    document.querySelector('.comment-container').style.overflow = 'hidden';
     // console.log('window.innerHeight:', window.innerHeight);
 }
 
