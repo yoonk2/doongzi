@@ -95,11 +95,11 @@ const guestbookForm = document.querySelector(`.guestbook__form`);
 
 
 guestbookInput.addEventListener('focus', () => {
-    // if (window.innerWidth < 768) {
+    guestbookInput.placeholder = "둥지에게 응원과 칭찬을 날려주세요!!";
+    if (window.innerWidth < 768) {
         // guestbookForm.style.marginTop = `calc(var(--grid-height)*2)`;
-        guestbookInput.placeholder = "둥지에게 응원과 칭찬을 날려주세요!!";
-
-    // }
+        guestbookInput.placeholder = "칭찬을 날려주세요!!";
+    }
     // console.log('focus');
 });
 
