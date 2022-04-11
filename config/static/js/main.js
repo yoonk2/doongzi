@@ -1,3 +1,8 @@
+if (window.innerWidth < 768) { 
+    document.querySelector('body').style.height = Window.innerHeight + 'px';
+    // console.log('window.innerHeight:', window.innerHeight);
+}
+
 // 방명록 ajax
 
 const guestbookInput = document.querySelector(`#guestbook__input`);
