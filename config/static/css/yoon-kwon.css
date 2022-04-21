@@ -24,10 +24,14 @@ p {
     padding: 0;
 }
 
-a, strong {
+a{
     color: #4e4e4e;
     text-decoration: 2.5px underline dotted #25E84C;
     text-underline-offset: 0.18em;
+}
+
+strong {
+    color: #4e4e4e;
 }
 
 .disabled {

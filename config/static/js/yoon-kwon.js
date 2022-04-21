@@ -8,26 +8,19 @@ const studentDetail = document.querySelector(`.student-detail`);
 designerTitle.addEventListener('click', () => {
     if (designerDetail.style.display === 'none') {
         designerDetail.style.display = 'block';
-    }
-    else {
-        window.open('https://www.instagram.com/rnjs_dbs/');
+        designerTitle.innerHTML = `<a href="https://www.instagram.com/rnjs_dbs/">디자이너</a>다.`;
     }
 });
 
 developerTitle.addEventListener('click', () => {
     if (developerDetail.style.display === 'none') {
         developerDetail.style.display = 'block';
-    }
-    else {
-        window.open('https://github.com/yoonk2')
+        developerTitle.innerHTML = `<a href="https://github.com/yoonk2">개발자</a>다.`;
     }
 });
 
 studentTitle.addEventListener('click', () => {
     if (studentDetail.style.display === 'none') {
         studentDetail.style.display = 'block';
-    }
-    else {
-        studentDetail.style.display = 'none';
     }
 });
