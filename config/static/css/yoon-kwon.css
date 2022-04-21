@@ -28,9 +28,9 @@ a{
     color: #4e4e4e;
     text-decoration: 2.5px underline dotted #25E84C;
     text-underline-offset: 0.18em;
-    -webkit-text-decoration: 2.5px underline dotted #25E84C;
+    -webkit-text-decoration: 2.5px underline #25E84C;
     -webkit-text-underline-offset: 0.18em;
-    -moz-text-decoration: 2.5px underline dotted #25E84C;
+    -moz-text-decoration: 2.5px underline #25E84C;
     -moz-text-underline-offset: 0.18em;
 }
 
