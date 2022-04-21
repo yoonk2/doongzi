@@ -1,3 +1,5 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,7 +9,9 @@
     <title>Project Doongzi</title>
 </head>
 <body style="background-color: #25E84C;">
-    doongi's projects
-    <a href="{% url 'yoon_kwon' %}">#1</a>
+    <h3>
+        doongi's projects
+    </h3>
+    <a href="{% url 'projects:yoon-kwon' %}">#1</a>
 </body>
 </html>
