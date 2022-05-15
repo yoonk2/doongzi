@@ -1,0 +1,35 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/thank-you.css' %}">
+    <title>감사합니다</title>
+</head>
+<body>
+    <h3 style="text-align: center;">{%if name %}{{name}}님을 위한 {%endif%}랜덤 카네이션 생성기</h3>
+    <img src="{% static 'images/carnation1.png' %}" alt="기괴하게 생긴 카네이션 이미지." style="width: 100%;">
+    <p>From. 둥지의 권윤, 김나연, 이율리, 이채영</p>
+    <button onClick="changeFlower()">❤️</button>
+    <script>
+        changeFlower();
+        
+        function changeFlower() {
+            let flower = Math.floor(Math.random() * 4 + 1) ;
+            const img = document.getElementsByTagName('img')[0];
+            if (flower === 1) {
+                img.src = "{% static 'images/carnation1.png' %}";
+            } else if (flower === 2) {
+                img.src = "{% static 'images/carnation2.png' %}";
+            } else if (flower === 3) {
+                img.src = "{% static 'images/carnation3.jpg' %}";
+            } else {
+                img.src = "{% static 'images/carnation4.png' %}";
+            }
+        }
+    </script>
+</body>
+</html>

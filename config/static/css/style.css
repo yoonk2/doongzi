@@ -638,8 +638,12 @@ button {
 
     /* 방명록들 */
     .comment-container {
-        font-size: 2.2rem;
+        font-size: 1.2rem;
         align-content: flex-end;
+    }
+
+    .comment-text {
+        max-width: 12rem;
     }
 
     /* 게시물 포지션 */
