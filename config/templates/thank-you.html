@@ -7,27 +7,54 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{% static 'css/thank-you.css' %}">
+    <link rel="shortcut icon" href="{% static 'images/favicon.svg' %}" type="image/x-icon">
     <title>감사합니다</title>
 </head>
 <body>
-    <h3 style="text-align: center;">{%if name %}{{name}}님을 위한 {%endif%}랜덤 카네이션 생성기</h3>
-    <img src="{% static 'images/carnation1.png' %}" alt="기괴하게 생긴 카네이션 이미지." style="width: 100%;">
-    <p>From. 둥지의 권윤, 김나연, 이율리, 이채영</p>
-    <button onClick="changeFlower()">❤️</button>
+    <h3 style="text-align: center;">{%if name %}{{name}}을 위한 {%endif%}랜덤 카네이션 생성기</h3>
+    <a id="originial-img"href="{% static 'images/thank-you/carnation2.png' %}"><img class="carnation animation" src="{% static 'images/thank-you/carnation2_small.jpeg' %}" alt="기괴하게 생긴 카네이션 이미지." style="width: 100%;"></a>
+    <div class="random-btn" onClick="changeFlower()">
+        <img src="{% static 'images/thank-you/random_btn.png' %}">
+        <span>감사합니다</span>
+    </div>
+    <p class="from">From. <a href="https://www.instagram.com/project.doongzi">둥지</a>의 권윤, 김나연, 이율리, 이채영</p>
     <script>
-        changeFlower();
+        let flower = 3;
+        const img = document.querySelector('.carnation');
+        const originialImg = document.getElementById('originial-img');
         
         function changeFlower() {
-            let flower = Math.floor(Math.random() * 4 + 1) ;
-            const img = document.getElementsByTagName('img')[0];
-            if (flower === 1) {
-                img.src = "{% static 'images/carnation1.png' %}";
+            if (flower === undefined) {
+                flower = 2;
+            }
+            else if (flower === 1) {
+                img.src = "{% static 'images/thank-you/carnation1_small.jpeg' %}";
+                originialImg.href = "{% static 'images/thank-you/carnation1.png' %}";
+                img.classList.remove("animation")
+                img.offsetWidth
+                img.classList.add("animation")
+                flower = 4;
             } else if (flower === 2) {
-                img.src = "{% static 'images/carnation2.png' %}";
+                img.src = "{% static 'images/thank-you/carnation2_small.jpeg' %}";
+                originialImg.href = "{% static 'images/thank-you/carnation2.png' %}";
+                img.classList.remove("animation");
+                img.offsetWidth;
+                img.classList.add("animation");
+                flower = 3;
             } else if (flower === 3) {
-                img.src = "{% static 'images/carnation3.jpg' %}";
-            } else {
-                img.src = "{% static 'images/carnation4.png' %}";
+                img.src = "{% static 'images/thank-you/carnation3_small.jpeg' %}";
+                originialImg.href = "{% static 'images/thank-you/carnation3.jpg' %}";
+                img.classList.remove("animation")
+                img.offsetWidth
+                img.classList.add("animation")
+                flower = 1;
+            } else if (flower === 4) {
+                img.src = "{% static 'images/thank-you/carnation4_small.jpeg' %}";
+                originialImg.href = "{% static 'images/thank-you/carnation4.jpg' %}";
+                img.classList.remove("animation")
+                img.offsetWidth
+                img.classList.add("animation")
+                flower = 2;
             }
         }
     </script>

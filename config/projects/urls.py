@@ -11,4 +11,17 @@ urlpatterns = [
     path('thank-you/', thank_you, name='thank-you'),
     path('thank-you/1', thank_you_1, name='thank-you-1'),
     path('thank-you/2', thank_you_2, name='thank-you-2'),
+    path('thank-you/3', thank_you_3, name='thank-you-3'),
+    path('thank-you/4', thank_you_4, name='thank-you-4'),
+    path('thank-you/5', thank_you_5, name='thank-you-5'),
+    path('thank-you/6', thank_you_6, name='thank-you-6'),
+    path('thank-you/7', thank_you_7, name='thank-you-7'),
+    path('thank-you/8', thank_you_8, name='thank-you-8'),
+    path('thank-you/9', thank_you_9, name='thank-you-9'),
+    path('thank-you/10', thank_you_10, name='thank-you-10'),
+    path('thank-you/11', thank_you_11, name='thank-you-11'),
+    path('thank-you/12', thank_you_12, name='thank-you-12'),
+    path('thank-you/13', thank_you_13, name='thank-you-13'),
+    path('thank-you/14', thank_you_14, name='thank-you-14'),
+    
 ]
