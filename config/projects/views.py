@@ -62,3 +62,6 @@ def thank_you_16(request):
 def thank_you_17(request):
     ctx = {'name' : '이윤선 교수님'}
     return render(request,template_name='thank-you.html', context=ctx)
+def thank_you_18(request):
+    ctx = {'name' : '박지현 교수님'}
+    return render(request,template_name='thank-you.html', context=ctx)
