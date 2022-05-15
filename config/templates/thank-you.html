@@ -11,8 +11,8 @@
     <title>감사합니다</title>
 </head>
 <body>
-    <h3 style="text-align: center;">{%if name %}{{name}}을 위한 {%endif%}랜덤 카네이션 생성기</h3>
-    <a id="originial-img"href="{% static 'images/thank-you/carnation2.png' %}"><img class="carnation animation" src="{% static 'images/thank-you/carnation2_small.jpeg' %}" alt="기괴하게 생긴 카네이션 이미지." style="width: 100%;"></a>
+    <h3 style="text-align: center;">{%if name %}{{name}}을 위한 {% endif %}랜덤 카네이션 생성기</h3>
+    <a id="originial-img"href="{% static 'images/thank-you/carnation2.png' %}"><img class="carnation animation" src="{% static 'images/thank-you/carnation2_small.jpeg' %}" alt="기괴하게 생긴 카네이션 이미지."></a>
     <div class="random-btn" onClick="changeFlower()">
         <img src="{% static 'images/thank-you/random_btn.png' %}">
         <span>감사합니다</span>
