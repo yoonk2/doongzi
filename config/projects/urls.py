@@ -27,4 +27,5 @@ urlpatterns = [
     path('thank-you/16', thank_you_16, name='thank-you-16'),
     path('thank-you/17', thank_you_17, name='thank-you-17'),
     path('thank-you/18', thank_you_18, name='thank-you-18'),
+    path('thank-you/19', thank_you_19, name='thank-you-19'),
 ]
