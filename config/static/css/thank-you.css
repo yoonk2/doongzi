@@ -93,6 +93,10 @@ button {
         }
     }
 
+.random-btn > p {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
 .random-btn > img {
     height: 60px;
     padding-bottom: 20px;

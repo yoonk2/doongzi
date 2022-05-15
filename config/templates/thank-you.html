@@ -12,17 +12,18 @@
 </head>
 <body>
     <h3 style="text-align: center;">{%if name %}{{name}}을 위한 {% endif %}랜덤 카네이션 생성기</h3>
-    <a id="originial-img"href="{% static 'images/thank-you/carnation2.png' %}"><img class="carnation animation" src="{% static 'images/thank-you/carnation2_small.jpeg' %}" alt="기괴하게 생긴 카네이션 이미지."></a>
+    <a id="originial-img"href="{% static 'images/thank-you/carnation2.png' %}"><img class="carnation animation" src="#" alt="기괴하게 생긴 카네이션 이미지."></a>
     <div class="random-btn" onClick="changeFlower()">
+        <p>👇 눌러보세요!</p>
         <img src="{% static 'images/thank-you/random_btn.png' %}">
         <span>감사합니다</span>
     </div>
     <p class="from">From. <a href="https://www.instagram.com/project.doongzi">둥지</a>의 권윤, 김나연, 이율리, 이채영</p>
     <script>
-        let flower = 3;
+        let flower = Math.floor(Math.random() * 5) + 1;
         const img = document.querySelector('.carnation');
         const originialImg = document.getElementById('originial-img');
-        
+        changeFlower();
         function changeFlower() {
             if (flower === undefined) {
                 flower = 2;
@@ -51,6 +52,13 @@
             } else if (flower === 4) {
                 img.src = "{% static 'images/thank-you/carnation4_small.jpeg' %}";
                 originialImg.href = "{% static 'images/thank-you/carnation4.jpg' %}";
+                img.classList.remove("animation")
+                img.offsetWidth
+                img.classList.add("animation")
+                flower = 5;
+            } else if (flower === 5) {
+                img.src = "{% static 'images/thank-you/carnation5_small.jpeg' %}";
+                originialImg.href = "{% static 'images/thank-you/carnation5.png' %}";
                 img.classList.remove("animation")
                 img.offsetWidth
                 img.classList.add("animation")
