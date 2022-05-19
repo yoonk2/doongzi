@@ -32,13 +32,32 @@ a{
     -webkit-text-underline-offset: 0.18em;
     -moz-text-decoration: 2.5px underline #25E84C;
     -moz-text-underline-offset: 0.18em;
+    cursor: pointer;
+}
+
+.fade {
+    -webkit-animation: fade 1s infinite linear;
+    animation: fade 1s infinite linear;
+    animation-direction: alternate;
 }
 
 strong {
     color: #4e4e4e;
     cursor: pointer;
+
 }
 
 .disabled {
     display: none;
+}
+
+
+@keyframes fade {
+    0% {
+        opacity: .25;
+    }
+    
+    100% {
+        opacity: 1;
+    }
 }
