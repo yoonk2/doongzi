@@ -31,7 +31,7 @@ studentTitle.addEventListener('click', () => {
     if (studentDetail.style.display === 'none') {
         studentDetail.style.display = 'block';
         studentTitleAnchor.classList.remove('fade');
-        document.querySelector('.doongsite').classList.add('fade');
+        // document.querySelector('.doongsite').classList.add('fade');
         furtherText.style.display = 'block';
     }
 });
