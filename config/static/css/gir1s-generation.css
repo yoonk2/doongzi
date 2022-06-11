@@ -1,0 +1,41 @@
+@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
+
+html {
+    font-size: 62.5%;
+    font-family: 'Pretendard', 'Noto Sans KR', sans-serif;
+}
+
+header {
+    margin-top: 200px;
+    margin-bottom: 100px;
+}
+
+h1 {
+    font-size: 64px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+h3 {
+    font-size: 48px;
+    font-weight: bold;
+    text-align: center;
+}
+
+section {
+    margin: 0 auto;
+    display: flex;
+    height: 70px;
+    font-size: 24px;
+    align-items: flex-start;
+    justify-content: start;
+    width: 850px;
+}
+
+span {
+    width: 400px;
+}
+.title {
+    font-weight: bold;
+}

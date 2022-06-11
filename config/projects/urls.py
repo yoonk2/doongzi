@@ -28,4 +28,6 @@ urlpatterns = [
     path('thank-you/17', thank_you_17, name='thank-you-17'),
     path('thank-you/18', thank_you_18, name='thank-you-18'),
     path('thank-you/19', thank_you_19, name='thank-you-19'),
+    path('piro', piro, name='piro'),
+    path('gir1s-generation', gir1s_generation, name='gir1s-generation'),
 ]

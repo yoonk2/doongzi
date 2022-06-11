@@ -1,0 +1,32 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/reset.css' %}">
+    <link rel="stylesheet" href="{% static 'css/gir1s-generation.css' %}">
+    <title>성급한 일반화</title>
+</head>
+<body>
+    <header>
+        <h1>『성급한 일반화』</h1>
+        <h3>2022-06-04</h3>
+    </header>
+    <section>
+        <span class="title">갓생</span>
+        <span class="person">일반</span>
+        <img src="" alt="">
+    </section>
+    {% for credit in credits %}
+    <section>
+        <span class="title">{{credit.title}}</span>
+        <span class="person">{{credit.person}}</span>
+        {% if credit.image %}
+        <img style="height:50px;" src="{{credit.image.url}}" alt="">
+        {% endif %}
+    </section>
+    {% endfor %}
+</body>
+</html>

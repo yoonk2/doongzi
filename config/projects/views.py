@@ -1,3 +1,4 @@
+from random import shuffle
 from django.shortcuts import render
 from .models import *
 # Create your views here.
@@ -68,3 +69,9 @@ def thank_you_18(request):
 def thank_you_19(request):
     ctx = {'name' : '전문가집단 탁쌤/알쌤/황쌤'}
     return render(request,template_name='thank-you.html', context=ctx)
+def piro(request):
+    return render(request,'piro.html')
+def gir1s_generation(request):
+    credits = Credit.objects.order_by('?').all()
+    ctx = {'credits' : credits,}
+    return render(request,template_name='gir1s-generation.html', context=ctx)

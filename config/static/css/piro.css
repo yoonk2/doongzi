@@ -1,0 +1,33 @@
+@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
+
+html {
+    font-size: 62.5%;
+    font-family: 'Pretendard', 'Helvetica Neue', sans-serif;
+}
+
+section {
+    width: 100%;
+    max-width: 1080px;
+    height: 100vw;
+    max-height: 1080px;
+    background-color: #0075FF;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+h1 {
+    font-size: 12.8rem;
+    font-weight: 700;
+    color: #FDFFB0;
+    text-align: center;
+}
+
+pre {
+    font-family: 'Source Code Pro', monospace;
+    color: #FDFFB0;
+    font-size: 3.6rem;
+    font-weight: 600;
+    line-height: 4.5rem;
+}
