@@ -24,4 +24,4 @@ class Comment(models.Model):
     positionY = models.CharField(max_length=10, verbose_name='Y위치', blank=True, null=True)
 
     def __str__(self):
-        return self.content
+        return self.created_at + '|' + self.content
