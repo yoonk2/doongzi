@@ -119,6 +119,9 @@
         </div>
     </div>
     {% endfor %}
+    <script>
+        let posts = JSON.parse("{{ posts_js | escapejs }}")
+    </script>
     <script type="text/javascript" src="{% static 'js/main.js' %}"></script>
 </body>
 </html>

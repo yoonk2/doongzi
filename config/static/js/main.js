@@ -117,3 +117,17 @@ guestbookInput.addEventListener('blur', () => {
     // }
     // console.log('blur');
 });
+
+// 카드 위치 설정
+// margin-top: calc(var(--grid-height) * 3);
+
+posts.forEach((post) => {
+    const postContainer = document.querySelector(`.post-${post.id}`);
+    if (post.position_row) {
+        postContainer.style.marginTop = (16 * (post.position_row-1)) + 'vh'
+        postContainer.style.top = (post.position_row-1) + 'px'
+    }
+    if (post.position_X) {
+        postContainer.style.left = post.position_X + 'px'
+    }
+})
