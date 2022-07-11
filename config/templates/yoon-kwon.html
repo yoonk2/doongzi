@@ -12,7 +12,7 @@
     <title>Yoon Kwon</title>
 </head>
 <body>
-    <div class="main">
+    <main>
         <p class="title"><a href="">권윤</a>은 대한민국의</p>
         <p class="designer-title"><strong class="fade">디자이너</strong>다.</p>
         <p class="designer-detail hidden">디자인 크루 <a href="https://www.instagram.com/project.doongzi">둥지</a>의 바지대표이며, 한글 타이포그래피 소모임 <a href="https://www.instagram.com/comeasflower_ewha">꽃</a>에서 활동하고 있다.</p> 
@@ -24,7 +24,14 @@
         <p class="student-detail hidden" >이화여자대학교 디자인학부에서 공부하던 중 휴학해 현재는 <a href="https://namu.wiki/w/%EB%B0%B1%EC%88%98">백수</a>로 활약하고 있다.</p>
         <p>최근 둥지의 첫 전시를 위한 <a class="doongsite" href="https://doongzi.ga">웹사이트</a>를 디자인하고 개발했다.</p>
         <p class="further fade hidden" style="cursor: pointer;">참고로...</p>
-    </div>
+        <p class="support-yoon">지금까지 <strong id="supportNum">{{supports | length}}번</strong>의 응원을 받았다.</p>
+        <form action="{% url 'projects:support-yoon'%}" method="POST">
+            {% csrf_token %}
+            <button type="submit">응원하기</button>
+        </form>
+    </main>
+    <script>
+    </script>
     <script type="text/javascript" src="{% static 'js/yoon-kwon.js' %}"></script>
 </body>
 </html>

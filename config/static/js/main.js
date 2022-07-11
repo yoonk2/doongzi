@@ -29,20 +29,11 @@ const commentHandleResponse = () => {
     if (addComment.status < 400){
         const {content, id} = JSON.parse(addComment.response);
         const commentContainer = document.querySelector(`.comment-container`);
-        // const newCommentParent = document.createElement('div');
-        // console.log('addcomment')
         currentHtml = commentContainer.innerHTML
         commentContainer.innerHTML = currentHtml + `
             <span class="comment-text comment-text-${id}">${content}</span>
         `;
-        // const newComment = newCommentParent.firstElementChild;
-        // console.log(commentContainer);
-        // console.log(newComment);
-        // commentContainer.appendChild(newComment);
-        // console.log(commentContainer);
         document.querySelector(`#guestbook__input`).value = '';
-        // const newComment = newCommentParent.firstChild;
-        // commmentContainer.innerHTML=commentContainer.appendChild(newComment);
         };
     }
 addComment.onreadystatechange = () => {

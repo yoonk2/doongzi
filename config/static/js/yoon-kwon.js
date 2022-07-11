@@ -42,3 +42,33 @@ furtherText.addEventListener('click', () => {
     furtherText.style.cursor = 'default'
     furtherText.innerHTML = `참고로 이 웹사이트에 사용된 <span class="fade">깜박이는</span> 애니메이션은 <a href="https://minguhong.com">minguhong.com</a>에서 제작자의 허락을 받고 훔쳤다.`;
 })
+
+// 응원하기
+
+const supportYoon = (supportNumber) => {
+    const support = document.querySelector(`.support-yoon`);
+    support.innerHTML = `${supportNumber ++}번의 응원을 받았다.`;
+}
+// const addSupport = new XMLHttpRequest();
+// const supportYoon = () => {
+//     const url = 'support_ajax';
+//     // let content = document.querySelector(`#guestbook__input`).value
+//     addSupport.open('POST', url, true);
+//     addSupport.setRequestHeader(
+//         "Content-Type",
+//         "application/x-www-form-urlencoded"
+//         );
+//         addSupport.send(JSON.stringify({content:(supportNum+1)}));
+//     }
+// const supportHandleResponse = () => {
+//     if (addSupport.status < 400){
+//         const {supportNum} = JSON.parse(addSupport.response);
+//         const supportContainer = document.querySelector(`.support-yoon`);
+//         currentHtml = supportContainer.innerHTML
+//         supportContainer.innerHTML = `${supportNum}번의 응원을 받았다.`
+//     }
+// addSupport.onreadystatechange = () => {
+//     if (addSupport.readyState === XMLHttpRequest.DONE) {
+//         commentHandleResponse();
+//     }
+// }
