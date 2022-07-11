@@ -1,4 +1,5 @@
 from random import shuffle
+from django.http import HttpResponse
 from django.shortcuts import redirect, render
 from .models import *
 from django.views.decorators.http import require_GET, require_POST
@@ -26,9 +27,7 @@ def support_yoon(request):
             name=name,
         )
         support.save()
-        print(request)
-        print(support.id)
-        return redirect("/projects/yoon-kwon")
+        return redirect("projects:yoon-kwon")
     return redirect("projects:yoon-kwon")
 
 

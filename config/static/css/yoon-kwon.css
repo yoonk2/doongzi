@@ -51,6 +51,23 @@ strong {
     display: none;
 }
 
+button {
+    border: none;
+    background: radial-gradient(50% 50% at 50% 50%, #25E84C 36.98%, rgba(37, 232, 76, 0) 100%);
+    cursor: pointer;
+    outline: none;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    transition: 0.3s;
+    font-size: 32px;
+    font-weight: 700;
+    color:#4e4e4e;
+    line-height: 150%;
+    position: fixed;
+    bottom: 50px;
+    right: 50px;
+}
 
 @keyframes fade {
     0% {

@@ -44,31 +44,12 @@ furtherText.addEventListener('click', () => {
 })
 
 // 응원하기
+const supportBtn = document.querySelector(`.support-btn`);
+let supportText = []
+supportText[0] = `응원합니다`
+supportText[1] = `화이팅`
+supportText[2] = `멋져요`
+supportText[3] = `좋아요`
+supportText[4] = `최고`
 
-const supportYoon = (supportNumber) => {
-    const support = document.querySelector(`.support-yoon`);
-    support.innerHTML = `${supportNumber ++}번의 응원을 받았다.`;
-}
-// const addSupport = new XMLHttpRequest();
-// const supportYoon = () => {
-//     const url = 'support_ajax';
-//     // let content = document.querySelector(`#guestbook__input`).value
-//     addSupport.open('POST', url, true);
-//     addSupport.setRequestHeader(
-//         "Content-Type",
-//         "application/x-www-form-urlencoded"
-//         );
-//         addSupport.send(JSON.stringify({content:(supportNum+1)}));
-//     }
-// const supportHandleResponse = () => {
-//     if (addSupport.status < 400){
-//         const {supportNum} = JSON.parse(addSupport.response);
-//         const supportContainer = document.querySelector(`.support-yoon`);
-//         currentHtml = supportContainer.innerHTML
-//         supportContainer.innerHTML = `${supportNum}번의 응원을 받았다.`
-//     }
-// addSupport.onreadystatechange = () => {
-//     if (addSupport.readyState === XMLHttpRequest.DONE) {
-//         commentHandleResponse();
-//     }
-// }
+supportBtn.innerHTML = supportText[Math.floor(Math.random() * supportText.length)];
