@@ -60,13 +60,23 @@ button {
     height: 150px;
     border-radius: 50%;
     transition: 0.3s;
-    font-size: 32px;
+    font-size: 24px;
     font-weight: 700;
     color:#4e4e4e;
     line-height: 150%;
     position: fixed;
     bottom: 50px;
     right: 50px;
+    overflow: visible;
+}
+
+.thanks {
+    position: fixed;
+    bottom: 50px;
+    font-size: 16px;
+    font-weight: 700;
+    color:#4e4e4e;
+    line-height: 150%;
 }
 
 @keyframes fade {

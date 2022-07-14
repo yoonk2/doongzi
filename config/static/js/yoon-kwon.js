@@ -53,3 +53,7 @@ supportText[3] = `좋아요`
 supportText[4] = `최고`
 
 supportBtn.innerHTML = supportText[Math.floor(Math.random() * supportText.length)];
+
+// supportBtn.addEventListener('click', () => {
+//     document.querySelector('.support-yoon').classList.toggle('hidden') 
+// }
