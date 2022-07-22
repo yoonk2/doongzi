@@ -18,10 +18,28 @@ from django.urls import path, include
 from .views import *
 from django.conf import settings
 from django.conf.urls.static import static
+from rest_framework import routers
+from yoon import views
+from doongzipedia import views
+from django.views.generic import TemplateView
 
-urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('', include('main.urls')),
-    path('projects/', include('projects.urls')),
-] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT) + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+router = routers.DefaultRouter()
+# router.register(r"yoon", views.SupportView, basename="yoon")
+router.register("words", views.WordView, basename="words")
 
+urlpatterns = (
+    [
+        path("admin/", admin.site.urls),
+        path("", include("main.urls")),
+        path("projects/", include("projects.urls")),
+        path("api/", include(router.urls)),
+        path(
+            "yoon/",
+            yoon,
+            name="yoon",
+        ),
+        path("doongzipedia/", include("doongzipedia.urls")),
+    ]
+    + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+    + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+)

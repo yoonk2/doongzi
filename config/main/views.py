@@ -7,7 +7,8 @@ import json
 
 def index(request):
     posts = Post.objects.all()
-    comments = Comment.objects.all()
+    comments = Comment.objects.order_by("?")
+
     ctx = {
         "posts": posts,
         "comments": comments,
