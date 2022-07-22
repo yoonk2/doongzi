@@ -26,7 +26,7 @@ ROOT_DIR = os.path.dirname(BASE_DIR)
 SECRET_KEY = "django-insecure-)+4f2a!#f171uod#(ijev%@qij7(-(@+76x1y@h+2dty%8le#="
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ["*"]
 
@@ -149,6 +149,7 @@ CORS_ORIGIN_WHITELIST = [
     "http://localhost",
     "http://doongzi.works",
     "https://doongzi.works",
+    "http://localhost:3000",
 ]
 
 REST_FRAMEWORK = {

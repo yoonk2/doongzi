@@ -20,10 +20,12 @@ from django.conf import settings
 from django.conf.urls.static import static
 from rest_framework import routers
 from yoon import views
+from doongzipedia import views
 from django.views.generic import TemplateView
 
 router = routers.DefaultRouter()
-router.register(r"yoon", views.SupportView, basename="yoon")
+# router.register(r"yoon", views.SupportView, basename="yoon")
+router.register("words", views.WordView, basename="words")
 
 urlpatterns = (
     [
