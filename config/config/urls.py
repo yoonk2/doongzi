@@ -19,9 +19,9 @@ from .views import *
 from django.conf import settings
 from django.conf.urls.static import static
 from rest_framework import routers
-from yoon import views
 from doongzipedia import views
 from django.views.generic import TemplateView
+from django.views.generic.base import RedirectView
 
 router = routers.DefaultRouter()
 # router.register(r"yoon", views.SupportView, basename="yoon")
@@ -33,12 +33,8 @@ urlpatterns = (
         path("", include("main.urls")),
         path("projects/", include("projects.urls")),
         path("api/", include(router.urls)),
-        path(
-            "yoon/",
-            yoon,
-            name="yoon",
-        ),
         path("doongzipedia/", include("doongzipedia.urls")),
+        path("yoon/", RedirectView.as_view(pattern_name="projects:yoon-kwon")),
     ]
     + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
     + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
