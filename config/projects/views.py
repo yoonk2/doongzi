@@ -140,3 +140,15 @@ def gir1s_generation(request):
         "credits": credits,
     }
     return render(request, template_name="gir1s-generation.html", context=ctx)
+
+
+def chaeyoung(request):
+    return render(request, "chaeyoung.html")
+
+
+def yullee(request):
+    return render(request, "yullee.html")
+
+
+def nayoun(request):
+    return render(request, "nayoun.html")

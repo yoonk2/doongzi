@@ -31,4 +31,7 @@ urlpatterns = [
     path("thank-you/19", thank_you_19, name="thank-you-19"),
     path("piro", piro, name="piro"),
     path("gir1s-generation", gir1s_generation, name="gir1s-generation"),
+    path("chaeyoung", chaeyoung, name="chaeyoung"),
+    path("yullee", yullee, name="yullee"),
+    path("nayoun", nayoun, name="nayoun"),
 ]
