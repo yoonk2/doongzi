@@ -34,4 +34,6 @@ urlpatterns = [
     path("chaeyoung", chaeyoung, name="chaeyoung"),
     path("yullee", yullee, name="yullee"),
     path("nayoun", nayoun, name="nayoun"),
+    path("invitation", invitation, name="invitation"),
+    path("invitation/<str:name>", invitation_withname, name="invitation"),
 ]

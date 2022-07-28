@@ -152,3 +152,12 @@ def yullee(request):
 
 def nayoun(request):
     return render(request, "nayoun.html")
+
+
+def invitation(request):
+    return render(request, "invitation.html")
+
+
+def invitation_withname(request, name):
+    ctx = {"name": name}
+    return render(request, "invitation.html", context=ctx)

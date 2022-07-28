@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from .models import *
 import json
 
@@ -33,3 +33,9 @@ def comment_ajax(request):
     id = comment.id
 
     return JsonResponse({"content": content, "id": id})
+
+
+def comment_delete(request):
+    comment = Comment.objects.get(content="")
+    comment.delete()
+    return redirect("projects:index")

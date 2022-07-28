@@ -1,0 +1,88 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% if name %}{{name}}님을{% else %}당신을{%endif%} 초대합니다.</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="둥지는 대한민국 최고의 디자인 크루입니다.">
+    <!-- 페이스북 -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="둥지">
+    <meta property="og:description" content="둥지의 첫번째 단독 전시에 초대합니다.">
+    <meta property="og:image" content="{% static 'images/doongsite-seo.png' %}">
+    <meta property="og:url" content="https://doongzi.works">
+    <link rel="shortcut icon" href="{% static 'images/favicon.svg' %}" type="image/x-icon">
+
+    <!-- 트위터 공유 시 -->
+    <meta property="twitter:card" content="카드타입">
+    <meta property="twitter:title" content="둥지">
+    <meta property="twitter:description" content="둥지의 첫번째 단독 전시에 초대합니다.">
+    <meta property="twitter:image" content="{% static 'images/doongsite-seo.png' %}">
+
+</head>
+<body>
+    <p>둥지의 첫 단독 전시, KNOCK KNOCK:<br>HOW TO DOONGZI에 {% if name %}<span style="color:#25E84C;">{{name}}</span>님을{% else %}당신을{%endif%} 초대합니다.</p>
+    <img class="imback" src="{% static 'images/imback.svg' %}" alt="im-back image">
+    <a class="go-btn" href="">갈래요!</a>
+</body>
+<style>
+    body {
+        margin: 35px;
+    }
+    p {
+        font-size: 32px;
+        line-height: 42px;
+        font-weight: bold;
+        text-align: left;
+        margin-top: 20px;
+        word-break: keep-all;
+        white-space: pre-wrap;
+    }
+    .go-btn {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 150px;
+        height: 66px;
+        background-color: #25E84C;
+        color: #000;
+        line-height: 50px;
+        font-size: 32px;
+        font-weight: bold;
+        text-decoration: none;
+        box-shadow: 0px 0px 12px -4px #25E84C;
+        margin: 0 auto;
+        position: fixed;
+        bottom: 40px;
+        left: 50%;
+        transform: translate(-50%, 0);
+    }
+
+    img.imback {
+        width: 180px;
+        height: auto;
+        position: absolute;
+        position: absolute;
+        right: 10px;
+        top: 170px;  
+        -webkit-animation: fade 0.7s infinite linear;
+        animation: fade 0.7s infinite linear;
+        animation-direction: alternate;
+    }
+        
+
+    @keyframes fade {
+    0% {
+        opacity: .25;
+    }
+    
+    100% {
+        opacity: 1;
+    }
+}
+</style>
+</html>
