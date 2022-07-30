@@ -26,9 +26,12 @@
 
 </head>
 <body>
-    <p>둥지의 첫 단독 전시, KNOCK KNOCK:<br>HOW TO DOONGZI에 {% if name %}<span style="color:#25E84C;">{{name}}</span>님을{% else %}당신을{%endif%} 초대합니다.</p>
-    <img class="imback" src="{% static 'images/imback.svg' %}" alt="im-back image">
-    <a class="go-btn" href="">갈래요!</a>
+    <p>둥지의 첫 단독 전시, KNOCK KNOCK;<br>HOW TO DOONGZI에 {% if name %}<span style="color:#25E84C;">{{name}}</span>님을{% else %}당신을{%endif%} 초대합니다.</p>
+    <div class="hello-container">
+        <img class="hello-gif" src="{% static 'images/invitation/hello.gif' %}" alt="">
+        <img class="imback" src="{% static 'images/invitation/imback.svg' %}" alt="im-back image">
+    </div>
+    <a class="go-btn" href="https://docs.google.com/forms/d/e/1FAIpQLSd_6y91myV5CeoHic7NUq8o8eqT4AZJQGvoG8VQSDbQ8Op35w/viewform?usp=sf_link">갈래요!</a>
 </body>
 <style>
     body {
@@ -65,17 +68,23 @@
     }
 
     img.imback {
-        width: 180px;
+        width: 125px;
         height: auto;
         position: absolute;
-        position: absolute;
-        right: 10px;
-        top: 170px;  
+        left: 15px;
+        top: 10px;
         -webkit-animation: fade 0.7s infinite linear;
         animation: fade 0.7s infinite linear;
         animation-direction: alternate;
     }
-        
+    
+    img.hello-gif {
+        width: 100vw;
+    }
+
+    .hello-container {
+        position: relative;
+    }
 
     @keyframes fade {
     0% {
