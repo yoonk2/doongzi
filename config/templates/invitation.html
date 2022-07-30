@@ -8,19 +8,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% if name %}{{name}}님을{% else %}당신을{%endif%} 초대합니다.</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="둥지는 대한민국 최고의 디자인 크루입니다.">
+    <meta name="description" content="둥지의 첫번째 단독 전시에 초대합니다.">
     <!-- 페이스북 -->
     <meta property="og:type" content="website">
-    <meta property="og:title" content="둥지">
-    <meta property="og:description" content="둥지의 첫번째 단독 전시에 초대합니다.">
+    <meta property="og:title" content="{% if name %}{{name}}님을{% else %}당신을{%endif%} 초대합니다.">
+    <meta property="og:description" content="둥지의 첫번째 단독 전시가 8월 8일 시작됩니다.">
     <meta property="og:image" content="{% static 'images/doongsite-seo.png' %}">
     <meta property="og:url" content="https://doongzi.works">
     <link rel="shortcut icon" href="{% static 'images/favicon.svg' %}" type="image/x-icon">
 
     <!-- 트위터 공유 시 -->
     <meta property="twitter:card" content="카드타입">
-    <meta property="twitter:title" content="둥지">
-    <meta property="twitter:description" content="둥지의 첫번째 단독 전시에 초대합니다.">
+    <meta property="twitter:title" content="{% if name %}{{name}}님을{% else %}당신을{%endif%} 초대합니다.">
+    <meta property="twitter:description" content="둥지의 첫번째 단독 전시가 8월 8일 시작됩니다.">
     <meta property="twitter:image" content="{% static 'images/doongsite-seo.png' %}">
     <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.5/dist/web/static/pretendard.css" />
 
