@@ -35,6 +35,9 @@ urlpatterns = (
         path("api/", include(router.urls)),
         path("doongzipedia/", include("doongzipedia.urls")),
         path("yoon/", RedirectView.as_view(pattern_name="projects:yoon-kwon")),
+        path("yulaylist/", RedirectView.as_view(pattern_name="projects:yulaylist")),
+        path("bestnayoun/", RedirectView.as_view(pattern_name="projects:bestnayoun")),
+        path("cylee/", RedirectView.as_view(pattern_name="projects:cylee")),
     ]
     + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
     + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
