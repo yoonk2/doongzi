@@ -27,7 +27,7 @@
 
 </head>
 <body>
-    <p>둥지의 첫 단독 전시,<br>KNOCK KNOCK;<br>HOW TO DOONGZI에 {% if name %}<span style="color:#25E84C;">{{name}}</span>님을{% else %}당신을{%endif%} 초대합니다.</p>
+    <p>둥지의 첫 단독 전시,<br>KNOCK KNOCK;<br>HOW TO DOONGZI에<br>{% if name %}<span style="color:#25E84C;">{{name}}</span>님을{% else %}당신을{%endif%} 초대합니다.</p>
     <div class="hello-container">
         <img class="hello-gif" src="{% static 'images/invitation/hello.gif' %}" alt="">
         <img class="imback" src="{% static 'images/invitation/imback.svg' %}" alt="im-back image">
@@ -100,6 +100,13 @@
     100% {
         opacity: 1;
     }
-}
+    }
+
+    @media (min-width: 500px) {
+        body {
+            margin: 0 auto;
+            max-width: 400px;
+        }
+    }
 </style>
 </html>
