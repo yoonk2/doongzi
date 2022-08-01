@@ -16,7 +16,15 @@ function DoonzgiPedia() {
 		<>
 			<p>doongzi</p>
 			{wordList.map((word) => (
-				<p key={word.id}>{word.kor_word}</p>
+				<p key={word.id}>
+					{
+						word.length
+						// 	for (let i = 0; i < word.length; i++) {
+						// 		if (word.doong_position.includes(i)) {
+						// 	console.log(i)}
+						// }
+					}
+				</p>
 			))}
 		</>
 	)

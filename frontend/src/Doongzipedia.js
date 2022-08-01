@@ -1,5 +1,7 @@
 import React from "react"
 import { useEffect, useState } from "react"
+import "./Doongzipedia.css"
+import Word from "./components/Word.js"
 
 function DoonzgiPedia() {
 	const getData = async () => {
@@ -9,15 +11,38 @@ function DoonzgiPedia() {
 		console.log(data)
 	}
 	const [wordList, setWordList] = useState([])
+
+	function shuffle(array) {
+		array.sort(() => Math.random() - 0.5)
+		return array
+	}
+
 	useEffect(() => {
 		getData()
 	}, [])
 	return (
 		<>
-			<p>doongzi</p>
-			{wordList.map((word) => (
-				<p>{word.kor_word}</p>
-			))}
+			<main>
+				<section className="word-col">
+					{shuffle(wordList).map((word) => (
+						<Word word={word} />
+					))}
+				</section>
+				{window.innerWidth > 500 ? (
+					<>
+						<section className="word-col">
+							{shuffle(wordList).map((word) => (
+								<Word word={word} />
+							))}
+						</section>
+						<section className="word-col">
+							{shuffle(wordList).map((word) => (
+								<Word word={word} />
+							))}
+						</section>
+					</>
+				) : null}
+			</main>
 		</>
 	)
 }
