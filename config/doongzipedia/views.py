@@ -9,7 +9,7 @@ def index(request):
     ctx = {
         "words": words,
     }
-    return render(request, "doongzipedia.html", context=ctx)
+    return render(request, "frontend/build/index.html", context=ctx)
 
 
 class WordView(viewsets.ModelViewSet):
