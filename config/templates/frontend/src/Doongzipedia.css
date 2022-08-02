@@ -1,0 +1,55 @@
+html{
+    font-family: Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+}
+.doong {
+    /* color: red; */
+    padding-bottom: 30px;
+}
+
+main{
+    display: flex;
+    gap: 40px;
+    justify-content: center;
+}
+
+.word-col {
+    width: 450px;
+    height: 94vh;
+    overflow-y: scroll;
+    margin: 3vh 24px;
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+
+}
+/* Hide scrollbar for Chrome, Safari and Opera */
+.word-col::-webkit-scrollbar {
+    display: none;
+    }
+    
+.word-container {
+    /* animation: scroll 10s linear infinite; */
+}
+
+.word {
+    font-size: 64px;
+    font-weight: 700;
+    display: flex;
+    align-items: flex-end;
+    margin: 0 0 10px 0;
+}
+
+.definition{
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 20px;
+    margin: 0 0 30px 0;
+}
+
+@keyframes scroll {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(-100%);
+    }
+}
