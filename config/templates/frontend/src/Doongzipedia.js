@@ -17,12 +17,69 @@ function DoonzgiPedia() {
 		return array
 	}
 
+	// setTimeout(() => {
+	// 	wordColumns[0].scrollTop += 10
+	// }, 100)
+
+	const animateDoong = (time) => {
+		const interval = setInterval(() => {
+			let randomIndex = Math.floor(Math.random() * (48 * 3))
+			let randomWord = document.querySelectorAll(".word")[randomIndex]
+			let randomDoong = randomWord.querySelectorAll(".doong")
+			randomDoong[Math.floor(Math.random() * randomDoong.length)].classList.add(
+				"doong-animate"
+			)
+		}, time)
+		return () => {
+			clearInterval(interval) // timer 함수를 clearInterval을하여 return 한다.
+		}
+	}
+
+	const stopAnimateDoong = (time) => {
+		const interval = setInterval(() => {
+			let randomIndex = Math.floor(Math.random() * (48 * 3))
+			let randomWord = document.querySelectorAll(".word")[randomIndex]
+			let randomDoong = randomWord.querySelectorAll(".doong")
+			randomDoong[
+				Math.floor(Math.random() * randomDoong.length)
+			].classList.remove("doong-animate")
+		}, time)
+		return () => {
+			clearInterval(interval) // timer 함수를 clearInterval을하여 return 한다.
+		}
+	}
+
+	function scrollDown(amount, element) {
+		let currentScrollTop = element.scrollTop
+		if (currentScrollTop >= element.scrollHeight - window.innerHeight) {
+			element.scrollTo({
+				top: 0,
+				behavior: "smooth",
+			})
+		} else {
+			element.scrollTo({
+				top: (currentScrollTop += amount),
+				behavior: "smooth",
+			})
+		}
+	}
+	// setInterval(() => {
+	// 	scrollDown(100)
+	// }, 1000)
+
 	const wordColumns = document.querySelectorAll(".word-col")
-	setTimeout(() => {
-		wordColumns[0].scrollTop += 10
-	}, 100)
+	wordColumns.forEach((wordColumn) => {
+		wordColumn.addEventListener("mouseenter", (e) => {
+			scrollDown(100, wordColumn)
+		})
+	})
 	useEffect(() => {
 		getData()
+		animateDoong(123)
+		animateDoong(50)
+		animateDoong(64)
+		animateDoong(70)
+		animateDoong(33)
 	}, [])
 	return (
 		<>
