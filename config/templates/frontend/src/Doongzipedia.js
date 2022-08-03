@@ -9,7 +9,6 @@ function DoonzgiPedia() {
 		const response = await fetch("http://127.0.0.1:8000/api/words/")
 		const data = await response.json()
 		setWordList(data)
-		console.log("success!")
 	}
 	const [wordList, setWordList] = useState([])
 
@@ -18,42 +17,12 @@ function DoonzgiPedia() {
 		return array
 	}
 
-	const animateDoong = (time) => {
-		const interval = setInterval(() => {
-			let randomIndex = Math.floor(Math.random() * (48 * 3))
-			let randomWord = document.querySelectorAll(".word")[randomIndex]
-			let randomDoong = randomWord.querySelectorAll(".doong")
-			randomDoong[Math.floor(Math.random() * randomDoong.length)].classList.add(
-				"doong-animate"
-			)
-		}, time)
-		return () => {
-			clearInterval(interval) // timer 함수를 clearInterval을하여 return 한다.
-		}
-	}
-
-	const stopAnimateDoong = (time) => {
-		const interval = setInterval(() => {
-			let randomIndex = Math.floor(Math.random() * (48 * 3))
-			let randomWord = document.querySelectorAll(".word")[randomIndex]
-			let randomDoong = randomWord.querySelectorAll(".doong")
-			randomDoong[
-				Math.floor(Math.random() * randomDoong.length)
-			].classList.remove("doong-animate")
-		}, time)
-		return () => {
-			clearInterval(interval) // timer 함수를 clearInterval을하여 return 한다.
-		}
-	}
-
 	let scrollDownList = [true, true, true]
 	const scroll = (element, scrollDown) => {
 		if (scrollDown) {
-			console.log("down", scrollDown)
-			element.scrollBy(0, 1)
+			element.scrollBy(0, 0.5)
 		} else {
-			element.scrollBy(0, -1)
-			console.log("up", scrollDown)
+			element.scrollBy(0, -0.5)
 		}
 
 		if (element.scrollTop > element.scrollHeight - window.innerHeight * 0.95) {
@@ -61,7 +30,6 @@ function DoonzgiPedia() {
 		}
 		if (element.scrollTop === 0) {
 			scrollDown = true
-			console.log("scrollDown", scrollDown)
 		}
 		return scrollDown
 	}
@@ -81,14 +49,13 @@ function DoonzgiPedia() {
 				}
 				if (!pausedList[2]) {
 					scrollDownList[2] = scroll(columns.current[2], scrollDownList[2])
-					console.log("scrollDownList", scrollDownList)
 				}
 			}
-		}, 20)
+		}, 30)
 	}
 
 	const setPaused = () => {
-		for (let i = 0; i < pausedList.length; i++) {
+		for (let i = 0; i < columns.current.length; i++) {
 			columns.current[i].addEventListener("mouseenter", (e) => {
 				pausedList[i] = true
 			})
@@ -100,19 +67,7 @@ function DoonzgiPedia() {
 
 	useEffect(() => {
 		getData()
-		animateDoong(123)
-		animateDoong(50)
-		animateDoong(64)
-		animateDoong(70)
-		animateDoong(33)
-		autoScroll()
-		setTimeout(() => {
-			clearInterval(animateDoong(123))
-			clearInterval(animateDoong(50))
-			clearInterval(animateDoong(64))
-			clearInterval(animateDoong(70))
-			clearInterval(animateDoong(33))
-		}, 5000)
+
 		autoScroll()
 		setPaused()
 	}, [])

@@ -83,12 +83,21 @@ main::after {
 	align-items: flex-end;
 	margin: 0 0 10px 0;
 }
+.word > span {
+	transition: 0.2s;
+}
 
 .definition {
 	font-weight: 700;
 	font-size: 16px;
-	line-height: 20px;
+	line-height: 23px;
 	margin: 0 0 30px 0;
+	word-break: keep-all;
+	white-space: pre-wrap;
+}
+
+.elevated {
+	translate: translateY(30px);
 }
 
 @keyframes scroll {
