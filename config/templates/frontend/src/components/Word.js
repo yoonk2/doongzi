@@ -3,57 +3,38 @@ import { useEffect, useState, useRef } from "react"
 
 function Word(props) {
 	const word = props.word
-	const wordRef = useRef([])
+	const wordRef = useRef()
+
+	// const animateDoong = () => {
+	// 	const doong = wordRef.current.querySelectorAll(".doong")
+	// 	doong.forEach((element) => {
+	// 		// element.classList.add("doong-animate")
+	// 		element.style.animationDelay = `${Math.random()}s`
+	// 		console.log("doong")
+	// 	})
+	// }
+
 	const elevateLetters = () => {
-		wordRef.current.forEach((element) => {
-			element.addEventListener("mouseenter", (e) => {
-				element.querySelector("span").classList.add("elevated")
-			})
-		})
-	}
-
-	const animateDoong = (time) => {
-		const interval = setInterval(() => {
-			let randomIndex = Math.floor(Math.random() * wordRef.current.length)
-			let randomWord = wordRef.current[randomIndex]
-			let randomDoong = randomWord.querySelectorAll(".doong")
-			randomDoong[Math.floor(Math.random() * randomDoong.length)].classList.add(
-				"doong-animate"
-			)
-		}, time)
-		return () => {
-			clearInterval(interval) // timer 함수를 clearInterval을하여 return 한다.
+		const letters = wordRef.current.querySelectorAll("span")
+		for (let i = 0; i < letters.length; i++) {
+			letters[i].classList.add("elevated")
+			letters[i].style.transition = `${i * 0.2}s`
+			letters[i].classList.remove("doong-animate")
 		}
 	}
-
-	const stopAnimateDoong = (time) => {
-		const interval = setInterval(() => {
-			let randomIndex = Math.floor(Math.random() * (48 * 3))
-			let randomWord = wordRef.current[randomIndex]
-			let randomDoong = randomWord.querySelectorAll(".doong")
-			randomDoong[
-				Math.floor(Math.random() * randomDoong.length)
-			].classList.remove("doong-animate")
-		}, time)
-		return () => {
-			clearInterval(interval) // timer 함수를 clearInterval을하여 return 한다.
+	const removeElevatedLetters = () => {
+		const letters = wordRef.current.querySelectorAll("span")
+		for (let i = 0; i < letters.length; i++) {
+			letters[i].classList.remove("elevated")
+			if (letters[i].classList.contains("doong")) {
+				letters[i].classList.add("doong-animate")
+			}
 		}
+		console.log("elevated")
 	}
 	useEffect(() => {
-		console.log("word rendered")
-		// animateDoong(123)
-		// animateDoong(50)
-		// animateDoong(64)
-		// animateDoong(70)
-		// animateDoong(33)
-		// setTimeout(() => {
-		// 	clearInterval(animateDoong(123))
-		// 	clearInterval(animateDoong(50))
-		// 	clearInterval(animateDoong(64))
-		// 	clearInterval(animateDoong(70))
-		// 	clearInterval(animateDoong(33))
-		// }, 5000)
-		console.log(wordRef)
+		// elevateLetters()
+		console.log("dfjklfsjfklsj;")
 	}, [])
 
 	return (
@@ -61,14 +42,22 @@ function Word(props) {
 			<p
 				className="word"
 				key={word.id}
-				ref={(element) => (wordRef.current[word.id] = element)}
+				ref={wordRef}
+				onMouseEnter={elevateLetters}
+				onMouseLeave={removeElevatedLetters}
 			>
 				{word.kor_word.split("").map((char, index) => (
 					<>
 						{word.doong_position.includes(index + 1) ? (
-							<span className="doong">{char}</span>
+							<span
+								className="doong doong-animate"
+								key={index}
+								style={{ animationDelay: `${Math.random()}s` }}
+							>
+								{char}
+							</span>
 						) : (
-							<span>{char}</span>
+							<span key={index}>{char}</span>
 						)}
 					</>
 				))}

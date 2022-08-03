@@ -13,11 +13,11 @@ html {
 	animation: bounce 0.9s infinite;
 }
 
-.word-container:hover .doong-animate {
+/* .word-container:hover .doong-animate {
 	animation-play-state: paused;
 	background-color: #25e84c;
 	transition: 0.3s;
-}
+} */
 
 main {
 	display: flex;
@@ -29,25 +29,27 @@ main::before {
 	content: "";
 	display: block;
 	width: 100%;
-	height: 50px;
+	height: 80px;
 	background-color: white;
 	position: absolute;
-	top: 0;
+	top: -20px;
 	left: 0;
 	filter: blur(10px);
 	-webkit-filter: blur(10px);
+	z-index: 10;
 }
 main::after {
 	content: "";
 	display: block;
 	width: 100%;
-	height: 50px;
+	height: 80px;
 	background-color: white;
 	position: absolute;
-	bottom: 0;
+	bottom: -20px;
 	left: 0;
 	filter: blur(10px);
 	-webkit-filter: blur(10px);
+	z-index: 10;
 }
 
 .word-col {
@@ -97,7 +99,9 @@ main::after {
 }
 
 .elevated {
-	translate: translateY(30px);
+	/* translate: translateY(30px); */
+	background-color: #25e84c;
+	padding-bottom: 30px;
 }
 
 @keyframes scroll {
