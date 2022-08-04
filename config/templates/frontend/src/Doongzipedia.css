@@ -4,6 +4,9 @@ html {
 		"Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
 		sans-serif;
 }
+body {
+	transition: 0.2s;
+}
 .doong {
 	/* color: red; */
 	padding-bottom: 30px;
@@ -23,32 +26,37 @@ main {
 	display: flex;
 	gap: 40px;
 	justify-content: center;
+	overflow: hidden;
+	height: 100vh;
+	width: 100vw;
 }
 
 main::before {
 	content: "";
 	display: block;
-	width: 100%;
-	height: 80px;
-	background-color: white;
-	position: absolute;
-	top: -20px;
+	width: 120%;
+	height: 150px;
+	/* background-color: #25e84c; */
+	background: linear-gradient(180deg, #25e84c 70%, rgba(255, 255, 255, 0) 100%);
+	position: fixed;
+	top: -80px;
 	left: 0;
-	filter: blur(10px);
-	-webkit-filter: blur(10px);
+	/* filter: blur(10px); */
+	/* -webkit-filter: blur(10px); */
 	z-index: 10;
 }
 main::after {
 	content: "";
 	display: block;
-	width: 100%;
-	height: 80px;
-	background-color: white;
-	position: absolute;
-	bottom: -20px;
+	width: 120%;
+	height: 150px;
+	/* background-color: #25e84c; */
+	background: linear-gradient(0deg, #25e84c 70%, rgba(255, 255, 255, 0) 100%);
+	position: fixed;
+	bottom: -80px;
 	left: 0;
-	filter: blur(10px);
-	-webkit-filter: blur(10px);
+	/* filter: blur(10px); */
+	/* -webkit-filter: blur(10px); */
 	z-index: 10;
 }
 
@@ -78,15 +86,34 @@ main::after {
 	display: none;
 }
 
+.word-container {
+	position: relative;
+	/* transition: 0.3s; */
+}
+
 .word {
 	font-size: 64px;
 	font-weight: 700;
 	display: flex;
 	align-items: flex-end;
 	margin: 0 0 10px 0;
+	position: relative;
 }
 .word > span {
 	transition: 0.2s;
+}
+
+.word-container img {
+	width: 30%;
+	position: absolute;
+	z-index: 10;
+	right: 0;
+	transition: 0.5s;
+	opacity: 0;
+}
+
+.word-container:hover img {
+	opacity: 1;
 }
 
 .definition {
@@ -98,10 +125,30 @@ main::after {
 	white-space: pre-wrap;
 }
 
+.word-type {
+	margin: 0;
+	margin-top: -35px;
+	margin-left: 5px;
+	position: absolute;
+
+	font-size: 16px;
+	font-weight: 500;
+	color: black;
+	/* display: none; */
+	opacity: 0;
+	transition: 0.2s;
+	font-style: italic;
+}
+
 .elevated {
 	/* translate: translateY(30px); */
 	background-color: #25e84c;
 	padding-bottom: 30px;
+}
+
+.blur {
+	filter: blur(5px);
+	-webkit-filter: blur(5px);
 }
 
 @keyframes scroll {

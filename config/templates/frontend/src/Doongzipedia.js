@@ -5,8 +5,8 @@ import Word from "./components/Word.js"
 
 function DoonzgiPedia() {
 	const getData = async () => {
-		// const response = await fetch("https://doongzi.works/api/words/")
-		const response = await fetch("http://127.0.0.1:8000/api/words/")
+		const response = await fetch("https://doongzi.works/api/words/")
+		// const response = await fetch("http://127.0.0.1:8000/api/words/")
 		const data = await response.json()
 		setWordList(data)
 	}
@@ -19,19 +19,24 @@ function DoonzgiPedia() {
 
 	let scrollDownList = [true, true, true]
 	const scroll = (element, scrollDown) => {
-		if (scrollDown) {
-			element.scrollBy(0, 0.5)
-		} else {
-			element.scrollBy(0, -0.5)
-		}
+		if (element) {
+			if (scrollDown) {
+				element.scrollBy(0, 0.5)
+			} else {
+				element.scrollBy(0, -0.5)
+			}
 
-		if (element.scrollTop > element.scrollHeight - window.innerHeight * 0.95) {
-			scrollDown = false
+			if (
+				element.scrollTop >
+				element.scrollHeight - window.innerHeight * 0.95
+			) {
+				scrollDown = false
+			}
+			if (element.scrollTop === 0) {
+				scrollDown = true
+			}
+			return scrollDown
 		}
-		if (element.scrollTop === 0) {
-			scrollDown = true
-		}
-		return scrollDown
 	}
 
 	let pausedList = [false, false, false]
@@ -82,7 +87,7 @@ function DoonzgiPedia() {
 						}}
 					>
 						{shuffle(wordList).map((word) => (
-							<Word word={word} />
+							<Word key={word.id} word={word} />
 						))}
 					</section>
 				</div>
@@ -96,7 +101,7 @@ function DoonzgiPedia() {
 								}}
 							>
 								{shuffle(wordList).map((word) => (
-									<Word word={word} />
+									<Word key={word.id} word={word} />
 								))}
 							</section>
 						</div>
@@ -108,7 +113,7 @@ function DoonzgiPedia() {
 								}}
 							>
 								{shuffle(wordList).map((word) => (
-									<Word word={word} />
+									<Word key={word.id} word={word} />
 								))}
 							</section>
 						</div>
