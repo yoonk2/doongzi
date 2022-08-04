@@ -14,4 +14,5 @@ class WordSerializer(serializers.ModelSerializer):
             "doong_position",
             "link",
             "image",
+            "word_type",
         )
