@@ -73,6 +73,9 @@ header {
 	font-weight: 700;
 	color: black;
 }
+header a {
+	color: black;
+}
 .title {
 	font-size: 32px;
 }

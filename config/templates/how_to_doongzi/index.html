@@ -14,7 +14,17 @@
 
         <h3 class="title">{% if post.url == 'main' %}KNOCK KNOCK;<br>HOW TO DOONGZI{% else %}{{post.title}}{% endif %}</h3>
         {% if post.creator %}
+        {% if post.creator == '권윤' %}
+        <a href="{% url 'projects:yoon-kwon' %}" class="creator">권윤</a>
+        {% elif post.creator == '김나연' %}
+        <a href="{% url 'projects:bestnayoun' %}" class="creator">김나연</a>
+        {% elif post.creator == '이율리' %}
+        <a href="{% url 'projects:yulaylist' %}" class="creator">이율리</a>
+        {% elif post.creator == '이채영' %}
+        <a href="{% url 'projects:cylee' %}" class="creator">이채영</a>
+        {% else %}
         <p class="creator">{{post.creator}}</p>
+        {% endif %}
         {% endif %}
     </header>
     <main class="how-to-desc">
