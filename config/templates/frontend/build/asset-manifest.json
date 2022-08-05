@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/doongzipedia/static/css/main.fbbe06a2.css",
-    "main.js": "/doongzipedia/static/js/main.0e9b9fde.js",
+    "main.css": "/doongzipedia/static/css/main.fef1b1a3.css",
+    "main.js": "/doongzipedia/static/js/main.d39e3993.js",
     "static/js/787.16b7ef0d.chunk.js": "/doongzipedia/static/js/787.16b7ef0d.chunk.js",
     "static/media/logo.svg": "/doongzipedia/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
     "index.html": "/doongzipedia/index.html",
-    "main.fbbe06a2.css.map": "/doongzipedia/static/css/main.fbbe06a2.css.map",
-    "main.0e9b9fde.js.map": "/doongzipedia/static/js/main.0e9b9fde.js.map",
+    "main.fef1b1a3.css.map": "/doongzipedia/static/css/main.fef1b1a3.css.map",
+    "main.d39e3993.js.map": "/doongzipedia/static/js/main.d39e3993.js.map",
     "787.16b7ef0d.chunk.js.map": "/doongzipedia/static/js/787.16b7ef0d.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.fbbe06a2.css",
-    "static/js/main.0e9b9fde.js"
+    "static/css/main.fef1b1a3.css",
+    "static/js/main.d39e3993.js"
   ]
 }

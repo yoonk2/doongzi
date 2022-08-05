@@ -14,7 +14,7 @@ def index(request):
         "comments": comments,
         "posts_js": json.dumps([post.to_json() for post in posts]),
     }
-    return render(request, "index.html", ctx)
+    return render(request, "main.html", ctx)
 
 
 from django.http import JsonResponse
