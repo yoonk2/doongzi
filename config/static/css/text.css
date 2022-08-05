@@ -87,6 +87,11 @@ article.desc {
 	font-weight: 500;
 }
 
+section.main-list {
+	display: flex;
+	flex-direction: column;
+}
+
 .topview {
 	width: 80%;
 	margin: 0 auto;
@@ -117,8 +122,8 @@ article.desc {
 }
 
 .post-list img {
-	width: 30px;
-	height: 30px;
+	width: 25px;
+	height: 25px;
 }
 
 .post-list a {
@@ -135,18 +140,38 @@ footer {
 	display: flex;
 	flex-direction: row;
 	justify-content: space-between;
-	align-items: baseline;
+	align-items: center;
 	font-weight: 700;
 	color: black;
 	border-top: 2px solid black;
 }
 
 footer a {
-	font-size: 32px;
+	font-size: 28px;
 	color: black;
 	border: none;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+footer a > img {
+	height: 15px;
 }
 
 main.how-to-desc {
 	min-height: 100vh;
+}
+
+@media (min-width: 500px) {
+	section.main-list {
+		display: flex;
+		flex-direction: row;
+		width: 100%;
+		justify-content: center;
+		align-items: center;
+	}
+	.topview {
+		width: 40%;
+	}
 }

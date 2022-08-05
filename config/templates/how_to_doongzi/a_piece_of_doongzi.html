@@ -11,3 +11,10 @@
     <a href="{% url 'how_to_doongzi:nesting' %}">다음</a>
 </body>
 </html>
+
+{% extends "how_to_doongzi/index.html" %}
+{% block title %}쪽글 프로젝트{% endblock %}
+
+{% block content %}둥지가 살아가는 이야기 조각들이 담긴 책이다. 시간의 좌표를 매일 기록하는 일은 생각의 굳은살이 되어 둥지는 더욱 단단해졌다. 때론 완벽하고 때론 어설픈 둥지의 솔직한 하루를 쪽글 너머로 들여다보라. 
+{% endblock %}
+{% block next_btn %}{% url 'how_to_doongzi:nesting' %}{% endblock %}
