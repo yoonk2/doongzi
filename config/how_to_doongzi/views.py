@@ -23,7 +23,7 @@ def post(request, url):
         "next_post": next_post,
     }
     if url == "main":
-        posts = models.Post.objects.all()
+        posts = models.Post.objects.order_by("order")
         ctx["posts"] = posts
 
     return render(request, "how_to_doongzi/index.html", context=ctx)
