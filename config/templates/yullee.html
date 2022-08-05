@@ -1,12 +1,50 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/reset.css' %}">
+    <link rel="stylesheet" href="{% static 'css/text.css' %}">
+    <link rel="shortcut icon" href="{% static 'images/people/yullee.png' %}" type="image/x-icon">
     <title>이율리</title>
 </head>
 <body>
-    <h1>공사중...</h1>
+    <main>
+        <p>이율리는 <a href="https://www.instagram.com/yulaylist/">저세상</a>에서나 볼법한 그래픽을 다루는 디자이너이다.</p>
+        <p><strong class="typography fade">타이포그래피</strong>와 브랜딩, 편집 디자인을 짝사랑하고 있다.</p>
+        <p class="typography-detail hidden">한글 의류 개발 텀블벅 프로젝트에 참여한 바 있으며, 2022년 8월 기준 이화여자대학교 타이포그래피 학회 <a href="https://www.instagram.com/comeasflower_ewha/">꽃</a> 10기의 부회장이다.</p>
+        <p>디자이너로서 재미있는 <strong class="challenge">도전</strong>에 임할 준비가 되어있다.</p>
+        <p class="challenge-detail hidden">디자인 크루 <strong class="doongzi">둥지</strong>에서 각종 디자인 실험을 전개하고 있다. <strong class="and">그리고…</strong></p>
+        <p class="doongzi-detail hidden">〈어디서 본 적 있을〉 〈파브르 프로젝트〉 〈열: 열받는 매뉴얼〉 총 세 가지 프로젝트의 PM을 맡아왔다. 현재는 둥지 전용의 제목용 서체인 〈둥지체〉를 개발하고 있다.</p>
+        <p class="and-detail hidden">iu1358@naver.com에서 늘 새로운 도전 제의를 기다리고 있다.</p>
+        <p>둥지와 함께 8월 8일부터 14일까지 전시를 연 뒤, 월 말에 <strong class="band">밴드</strong> 공연을 올릴 예정이다.</p>
+        <p class="band-detail hidden">2022년 8월 기준 <a href="">밴드 연합동아리</a>에서 OB팀 <strong class="keyboard">건반</strong>을 맡고 있다. 2021년에는 포스터, 티켓, 썸네일, 모집공고 등의 각종 디자인 작업과 로고 리뉴얼을 도맡았다.</p>
+        <!-- 밴드 연합동아리 → 더블에이 유튜브 링크 -->
+        <!-- 건반 →  -->
+        <p class="keyboard-detail hidden">YAMAHA MX88을 사용하고 있지만 언젠가 Nord Stage를 사용해보는 것이 꿈이다.</p>
+        <p>참고로 이 페이지는 아직 공사중이다.</p>
+    </main>
+    <script>
+        // const typography = document.querySelector('.typography');
+        // const typographyDetail = document.querySelector('.typography-detail');
+        const categoryList = ['typography', 'challenge', 'doongzi', 'and', 'band', 'keyboard'];
+        const showDetail = (category, i) => {
+            const title = document.querySelector(`.${category}`)
+            const detail = document.querySelector(`.${category}-detail`)
+            const nextTitle = document.querySelector(`.${categoryList[i + 1]}`)
+            title.addEventListener('click', () => {
+                detail.classList.remove('hidden')
+                title.classList.remove('fade')
+                if (nextTitle) {
+                    nextTitle.classList.add('fade')
+                }
+            } );
+        }
+        for (let i = 0; i < categoryList.length; i++) {
+            showDetail(categoryList[i], i)
+        }
+    </script>
 </body>
 </html>
