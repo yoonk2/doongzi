@@ -5,13 +5,14 @@ from . import views
 from django.conf import settings
 from django.conf.urls.static import static
 
+from django.views.generic.base import RedirectView
 from django.views.generic import TemplateView
 from django.views.static import serve
 
 app_name = "how_to_doongzi"
 
 urlpatterns = [
-    path("", index, name="index"),
+    path("", RedirectView.as_view(url="p/main")),
     path("p/<str:url>", post, name="post"),
     # wrm qr 설명글용
     path("doongzi-log", doongzi_log, name="doongzi-log"),
