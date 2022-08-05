@@ -10,16 +10,33 @@
     <title>{%block title%}KNOCK KNOCK; HOW TO DOONGZI{%endblock%}</title>
 </head>
 <body>
-    <main>
+    <header>
         <h3 class="title">{{post.title}}</h3>
         {% if post.creator %}
-            <p class="creator">{{post.creator}}</p>
+        <p class="creator">{{post.creator}}</p>
         {% endif %}
-        <article>{{post.content}}</article>
-
-        {% if next_post %}
-        <a class="next-btn" href="/how-to-doongzi/p/{{next_post.url}}">다음</a>
+    </header>
+    <main class="how-to-desc">
+        <article class="desc">{{post.content}}</article>
+        {% if post.url == 'main' %}
+        <img class="topview" src="{% static 'images/htdz/topview.svg' %}" alt="둥지의 첫 전시 평면도">
+        <ul class="post-list">
+        {% for post in posts %}
+        {% if post.order != 0 %}
+            <li>
+                <img src="/static/images/htdz/{{post.order}}.svg" alt="">
+                <a href="/how-to-doongzi/p/{{post.url}}">{{post.title}}</a>
+            </li>
+            {% endif %}
+            {% endfor %}
+        </ul>
         {% endif %}
     </main>
+        <footer>
+            <a class="list" href="/how-to-doongzi/p/main">list</a>
+            {% if next_post %}
+            <a class="next-btn" href="/how-to-doongzi/p/{{next_post.url}}">next</a>
+            {% endif %}
+        </footer>
 </body>
 </html>

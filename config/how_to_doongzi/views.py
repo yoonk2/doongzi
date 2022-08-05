@@ -18,11 +18,14 @@ def post(request, url):
         next_post = models.Post.objects.get(order=post.order + 1)
     except:
         next_post = False
-
     ctx = {
         "post": post,
         "next_post": next_post,
     }
+    if url == "main":
+        posts = models.Post.objects.all()
+        ctx["posts"] = posts
+
     return render(request, "how_to_doongzi/index.html", context=ctx)
 
 

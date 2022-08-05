@@ -59,3 +59,94 @@ strong {
 		opacity: 1;
 	}
 }
+
+/* 설명글들 */
+header {
+	background-color: #25e84c;
+	padding: 1rem 2rem;
+	position: sticky;
+	top: 0;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: baseline;
+	font-weight: 700;
+	color: black;
+}
+.title {
+	font-size: 32px;
+}
+.creator {
+	font-size: 24px;
+	font-weight: 500;
+}
+article.desc {
+	font-size: 24px;
+	line-height: 1.5;
+	color: black;
+	font-weight: 500;
+}
+
+.topview {
+	width: 80%;
+	margin: 0 auto;
+	padding: 4rem;
+}
+
+.post-list {
+	width: 100%;
+	margin: 0 auto;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: flex-start;
+	white-space: normal;
+	margin-bottom: 10rem;
+}
+.post-list li {
+	padding: 0;
+	margin: 0;
+	list-style: none;
+	width: 100%;
+	/* height: 30px; */
+	display: flex;
+	gap: 1rem;
+	align-items: center;
+	border-bottom: 2px solid black;
+	font-weight: 500;
+}
+
+.post-list img {
+	width: 30px;
+	height: 30px;
+}
+
+.post-list a {
+	color: black;
+	font-size: 24px;
+	border: none;
+}
+
+footer {
+	background-color: white;
+	padding: 1rem 2rem;
+	position: sticky;
+	bottom: 0;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: baseline;
+	font-weight: 700;
+	color: black;
+	border-top: 2px solid black;
+}
+
+footer a {
+	font-size: 32px;
+	color: black;
+	border: none;
+}
+
+main.how-to-desc {
+	min-height: 100vh;
+}
