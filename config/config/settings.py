@@ -64,7 +64,10 @@ ROOT_URLCONF = "config.urls"
 TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
-        "DIRS": [os.path.join(BASE_DIR, "templates")],
+        "DIRS": [
+            os.path.join(BASE_DIR, "templates"),
+            os.path.join(BASE_DIR, "frontend", "build"),
+        ],
         "APP_DIRS": True,
         "OPTIONS": {
             "context_processors": [
@@ -131,6 +134,7 @@ STATIC_URL = "/static/"
 
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static"),
+    os.path.join(BASE_DIR, "frontend", "build", "static"),
 ]
 
 STATIC_ROOT = os.path.join(ROOT_DIR, ".static_root")
@@ -150,6 +154,7 @@ CORS_ORIGIN_WHITELIST = [
     "https://doongzi.works",
     "http://localhost:3000",
     "https://localhost:3000",
+    "http://127.0.0.1:8000",
 ]
 
 REST_FRAMEWORK = {
