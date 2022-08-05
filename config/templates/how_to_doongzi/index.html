@@ -1,0 +1,25 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/reset.css' %}">
+    <link rel="stylesheet" href="{% static 'css/text.css' %}">
+    <title>{%block title%}KNOCK KNOCK; HOW TO DOONGZI{%endblock%}</title>
+</head>
+<body>
+    <main>
+        <h3 class="title">{{post.title}}</h3>
+        {% if post.creator %}
+            <p class="creator">{{post.creator}}</p>
+        {% endif %}
+        <article>{{post.content}}</article>
+
+        {% if next_post %}
+        <a class="next-btn" href="/how-to-doongzi/p/{{next_post.url}}">다음</a>
+        {% endif %}
+    </main>
+</body>
+</html>

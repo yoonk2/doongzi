@@ -33,18 +33,7 @@ urlpatterns = [
     path("gir1s-generation", gir1s_generation, name="gir1s-generation"),
     path("invitation", invitation, name="invitation"),
     path("invitation/<str:name>", invitation_withname, name="invitation"),
-    # wrm qr 설명글용
     path("cylee", chaeyoung, name="cylee"),
     path("yulaylist", yullee, name="yulaylist"),
     path("bestnayoun", nayoun, name="bestnayoun"),
-    path("doongzi-log", doongzi_log, name="doongzi-log"),
-    path("doongzi-workroom", doongzi_workroom, name="doongzi-workroom"),
-    path("doongsite", doongsite, name="doongsite"),
-    path("fabre", fabre, name="fabre"),
-    path("a-piece-of-doongzi", a_piece_of_doongzi, name="a-piece-of-doongzi"),
-    path("nesting", nesting, name="nesting"),
-    path("celsius", celsius, name="celsius"),
-    path("burnout", burnout, name="burnout"),
-    path("bricklayer", bricklayer, name="bricklayer"),
-    path("doongzipedia", doongzipedia, name="doongzipedia"),
 ]

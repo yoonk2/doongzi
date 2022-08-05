@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     "main",
     "projects",
     "doongzipedia",
+    "how_to_doongzi",
 ]
 
 MIDDLEWARE = [
