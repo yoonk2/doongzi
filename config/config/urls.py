@@ -14,7 +14,7 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path, include
+from django.urls import path, include, re_path
 from .views import *
 from django.conf import settings
 from django.conf.urls.static import static
@@ -22,6 +22,8 @@ from rest_framework import routers
 from doongzipedia import views
 from django.views.generic import TemplateView
 from django.views.generic.base import RedirectView
+from django.views.static import serve
+
 
 router = routers.DefaultRouter()
 # router.register(r"yoon", views.SupportView, basename="yoon")
@@ -38,6 +40,9 @@ urlpatterns = (
         path("yulaylist/", RedirectView.as_view(pattern_name="projects:yulaylist")),
         path("bestnayoun/", RedirectView.as_view(pattern_name="projects:bestnayoun")),
         path("cylee/", RedirectView.as_view(pattern_name="projects:cylee")),
+        re_path(
+            r"^static/(?P<path>.*)$", serve, {"document_root": settings.STATIC_ROOT}
+        ),
     ]
     + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
     + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
