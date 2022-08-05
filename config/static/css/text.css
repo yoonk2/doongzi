@@ -175,3 +175,15 @@ main.how-to-desc {
 		width: 40%;
 	}
 }
+
+/* 나봉 페이지 */
+main.nabong p {
+	line-height: 1.7;
+	color: #4e4e4e;
+}
+
+main.nabong a {
+	border: none;
+	background-color: #25e84c;
+	padding: 3px 5px;
+}
