@@ -62,7 +62,7 @@ main::after {
 
 .word-col {
 	width: 450px;
-	height: 94vh;
+	height: 100vh;
 	overflow-y: scroll;
 	padding: 3vh 24px;
 	-ms-overflow-style: none; /* IE and Edge */

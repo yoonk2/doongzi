@@ -27,8 +27,8 @@ function DoonzgiPedia() {
 			}
 
 			if (
-				element.scrollTop >
-				element.scrollHeight - window.innerHeight * 0.95
+				element.offsetHeight + element.scrollTop + 1 >=
+				element.scrollHeight
 			) {
 				scrollDown = false
 			}
