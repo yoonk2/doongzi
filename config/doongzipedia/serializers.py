@@ -15,4 +15,5 @@ class WordSerializer(serializers.ModelSerializer):
             "link",
             "image",
             "word_type",
+            "likes",
         )
