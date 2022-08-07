@@ -67,6 +67,7 @@ main::after {
 	padding: 3vh 24px;
 	-ms-overflow-style: none; /* IE and Edge */
 	scrollbar-width: none; /* Firefox */
+	box-sizing: border-box;
 }
 
 /* Hide scrollbar for Chrome, Safari and Opera */
@@ -171,9 +172,6 @@ main::after {
 	.word-container,
 	.word {
 		width: 100%;
-	}
-	.word-col {
-		box-sizing: border-box;
 	}
 	.word {
 		font-size: 48px;
