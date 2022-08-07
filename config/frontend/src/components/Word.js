@@ -1,5 +1,6 @@
 import React from "react"
 import { useEffect, useState, useRef } from "react"
+import axios from "axios"
 
 function Word(props) {
 	const word = props.word

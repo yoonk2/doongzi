@@ -23,6 +23,7 @@ class Word(models.Model):
     word_type = models.CharField(
         max_length=20, choices=TYPE_CHOICES, default="starts_with"
     )
+    likes = models.IntegerField(default=0)
 
     created_at = models.DateTimeField(auto_now_add=True, verbose_name="제작일")
     updated_at = models.DateTimeField(auto_now=True)
