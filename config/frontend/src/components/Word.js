@@ -59,8 +59,6 @@ function Word(props) {
 
 	const likeWord = (id) => {
 		likes += 1
-		// console.log(likes)
-		// likeRef.current.innerHTML = likes
 		axios
 			.patch(`https://doongzi.works/api/words/${id}/`, {
 				likes: likes,
@@ -83,9 +81,16 @@ function Word(props) {
 				console.log(err)
 			})
 	}
+
+	const setHeart = () => {
+		const heartList = ["🧡", "💙", "💚", "💛", "💜", "🤎", "❤️", "💖"]
+		const heart = heartList[Math.floor(Math.random() * heartList.length)]
+		likeRef.current.innerHTML = heart
+	}
 	useEffect(() => {
 		// elevateLetters()
 		moveImage()
+		setHeart()
 	}, [])
 
 	return (
@@ -96,7 +101,8 @@ function Word(props) {
 			onClick={changeBgColor}
 		>
 			<button id="likeBtn" onClick={() => likeWord(word.id)}>
-				👍 <span ref={likeRef}>{likes}</span>
+				<p ref={likeRef}>❤️</p>
+				<p>{likes}</p>
 			</button>
 			{word.image ? (
 				<img src={word.image} alt={word.word} />
