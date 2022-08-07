@@ -8,6 +8,8 @@ from django.conf.urls.static import static
 from django.views.generic import TemplateView
 from django.views.static import serve
 
+from rest_framework.urlpatterns import format_suffix_patterns
+
 app_name = "doongzipedia"
 
 urlpatterns = [

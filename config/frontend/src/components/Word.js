@@ -3,17 +3,10 @@ import { useEffect, useState, useRef } from "react"
 import axios from "axios"
 
 function Word(props) {
-	const word = props.word
 	const wordRef = useRef()
-
-	// const animateDoong = () => {
-	// 	const doong = wordRef.current.querySelectorAll(".doong")
-	// 	doong.forEach((element) => {
-	// 		// element.classList.add("doong-animate")
-	// 		element.style.animationDelay = `${Math.random()}s`
-	// 		console.log("doong")
-	// 	})
-	// }
+	const likeRef = useRef()
+	const [word, setWord] = useState(props.word)
+	let likes = word.likes
 
 	const elevateLetters = () => {
 		const letters = wordRef.current.querySelectorAll("span")
@@ -36,33 +29,6 @@ function Word(props) {
 		wordRef.current.parentElement.querySelector(".word-type").style.opacity =
 			"0"
 	}
-
-	// const blurWords = (wordType) => {
-	// 	if (word.word_type !== wordType) {
-	// 		wordRef.current.parentElement.classList.add("blur")
-	// 	}
-	// 	const allWords =
-	// 		wordRef.current.parentElement.parentElement.querySelectorAll(
-	// 			".word-container"
-	// 		)
-	// 	// const diffType = allWords.filter((word) => word.word_type !== wordType)
-	// 	const diffType = allWords.
-	// 	diffType.forEach((word) => {
-	// 		word.classList.add("blur")
-	// 	})
-	// }
-
-	// const blurWords = () => {
-	// 	const allWords =
-	// 		wordRef.current.parentElement.parentElement.querySelectorAll(
-	// 			".word-container"
-	// 		)
-	// 	setTimeout(() => {
-	// 		allWords.forEach((word) => {
-	// 			word.classList.add("blur")
-	// 		})
-	// 	}, 2000)
-	// }
 
 	const changeBgColor = () => {
 		if (word.word_type === "new_word") {
@@ -90,6 +56,33 @@ function Word(props) {
 	const mouseLeaveFunc = () => {
 		removeElevatedLetters()
 	}
+
+	const likeWord = (id) => {
+		likes += 1
+		// console.log(likes)
+		// likeRef.current.innerHTML = likes
+		axios
+			.patch(`https://doongzi.works/api/words/${id}/`, {
+				likes: likes,
+			})
+			.then((res) => {
+				// console.log(res)
+				getWord()
+			})
+			.catch((err) => {
+				console.log(err)
+			})
+	}
+	const getWord = () => {
+		axios
+			.get(`https://doongzi.works/api/words/${word.id}/`)
+			.then((res) => {
+				setWord(res.data)
+			})
+			.catch((err) => {
+				console.log(err)
+			})
+	}
 	useEffect(() => {
 		// elevateLetters()
 		moveImage()
@@ -102,6 +95,9 @@ function Word(props) {
 			onMouseLeave={mouseLeaveFunc}
 			onClick={changeBgColor}
 		>
+			<button id="likeBtn" onClick={() => likeWord(word.id)}>
+				👍 <span ref={likeRef}>{likes}</span>
+			</button>
 			{word.image ? (
 				<img src={word.image} alt={word.word} />
 			) : word.link ? (
