@@ -35,10 +35,12 @@
             <ul class="post-list">
                 {% for post in posts %}
                 {% if post.order != 0 %}
+                <a href="/how-to-doongzi/p/{{post.url}}">
                 <li>
                     <img src="/static/images/htdz/{{post.order}}.svg" alt="">
-                    <a href="/how-to-doongzi/p/{{post.url}}">{{post.title}}</a>
+                    <p>{{post.title}}</p>
                 </li>
+                </a>
                 {% endif %}
                 {% endfor %}
             </ul>

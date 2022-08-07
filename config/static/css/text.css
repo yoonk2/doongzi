@@ -99,6 +99,7 @@ section.main-list {
 	width: 80%;
 	margin: 0 auto;
 	padding: 4rem;
+	margin-top: 1rem;
 }
 
 .post-list {
@@ -110,6 +111,9 @@ section.main-list {
 	align-items: flex-start;
 	white-space: normal;
 	margin-bottom: 10rem;
+}
+.post-list a {
+	width: 100%;
 }
 .post-list li {
 	padding: 0;
