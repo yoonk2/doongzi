@@ -91,7 +91,6 @@ function Word(props) {
 	}
 	useEffect(() => {
 		// elevateLetters()
-		console.log("word loaded")
 		moveImage()
 	}, [])
 

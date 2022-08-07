@@ -91,7 +91,7 @@ function DoonzgiPedia() {
 						))}
 					</section>
 				</div>
-				{window.innerWidth > 500 ? (
+				{window.innerWidth > 768 ? (
 					<>
 						<div className="word-wrapper">
 							<section
