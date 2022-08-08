@@ -6,7 +6,6 @@ function Word(props) {
 	const wordRef = useRef()
 	const likeRef = useRef()
 	const [word, setWord] = useState(props.word)
-	let likes = word.likes
 
 	const elevateLetters = () => {
 		const letters = wordRef.current.querySelectorAll("span")
@@ -58,7 +57,7 @@ function Word(props) {
 	}
 
 	const likeWord = (id) => {
-		likes += 1
+		let likes = (word.likes += 1)
 		axios
 			.patch(`https://doongzi.works/api/words/${id}/`, {
 				likes: likes,
@@ -76,6 +75,7 @@ function Word(props) {
 			.get(`https://doongzi.works/api/words/${word.id}/`)
 			.then((res) => {
 				setWord(res.data)
+				console.log(res.data)
 			})
 			.catch((err) => {
 				console.log(err)
@@ -83,7 +83,21 @@ function Word(props) {
 	}
 
 	const setHeart = () => {
-		const heartList = ["🧡", "💙", "💚", "💛", "💜", "🤎", "❤️", "💖"]
+		const heartList = [
+			"🧡",
+			"💙",
+			"💚",
+			"💛",
+			"💜",
+			"🤎",
+			"❤️",
+			"💖",
+			"🥰",
+			"🫶",
+			"💝",
+			"❤️‍🔥",
+			"💕",
+		]
 		const heart = heartList[Math.floor(Math.random() * heartList.length)]
 		likeRef.current.innerHTML = heart
 	}
@@ -102,7 +116,9 @@ function Word(props) {
 		>
 			<button id="likeBtn" onClick={() => likeWord(word.id)}>
 				<p ref={likeRef}>❤️</p>
-				<p>{likes}</p>
+				<p style={word.likes >= 100 ? { fontSize: "12px" } : null}>
+					{word.likes}
+				</p>
 			</button>
 			{word.image ? (
 				<img src={word.image} alt={word.word} />
