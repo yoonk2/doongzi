@@ -69,7 +69,7 @@ main::after {
 	height: 100vh;
 	overflow: visible;
 	overflow-y: scroll;
-	padding: 3vh 24px;
+	padding: 3vh 28px;
 	-ms-overflow-style: none; /* IE and Edge */
 	scrollbar-width: none; /* Firefox */
 	box-sizing: border-box;
@@ -100,7 +100,7 @@ main::after {
 #likeBtn {
 	position: absolute;
 	top: 0;
-	left: -24px;
+	left: -30px;
 	width: 24px;
 	/* height: 94px; */
 	border: none;
@@ -223,6 +223,9 @@ main::after {
 	.word-container,
 	.word {
 		width: 100%;
+	}
+	.word-col {
+		padding-left: 48px;
 	}
 	.word {
 		font-size: 48px;
