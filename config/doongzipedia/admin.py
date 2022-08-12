@@ -19,6 +19,7 @@ class WordResource(resources.ModelResource):
             "link",
             "image",
             "word_type",
+            "likes",
         )
         export_order = fields
 
@@ -33,6 +34,7 @@ class WordAdmin(ImportExportModelAdmin):
         "link",
         "image",
         "word_type",
+        "likes",
     )
     list_display = (
         "kor_word",
@@ -41,6 +43,7 @@ class WordAdmin(ImportExportModelAdmin):
         "example",
         "doong_position",
         "word_type",
+        "likes",
     )
     resource_class = WordResource
 
