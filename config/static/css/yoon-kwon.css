@@ -1,90 +1,124 @@
-@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css");
 
 html {
-    font-size: 62.5%;
-    font-family: 'Pretendard', 'Noto Sans KR', sans-serif;
+	font-size: 62.5%;
+	font-family: "Pretendard", "Noto Sans KR", sans-serif;
 }
 
 main {
-    /* width: 100%; */
-    padding: 2rem;
-    margin: 0 auto;
-    font-size: 32px;
-    font-weight: 700;
-    color:#828282;
-    line-height: 150%;
-    word-break: keep-all;
-    white-space: pre-wrap;
-    display: flex;
-    flex-direction: column;
+	/* width: 100%; */
+	padding: 2rem;
+	margin: 0 auto;
+	font-size: 32px;
+	font-weight: 700;
+	color: #828282;
+	line-height: 150%;
+	word-break: keep-all;
+	white-space: pre-wrap;
+	display: flex;
+	flex-direction: column;
 }
 
 .hidden {
-    display: none;
+	display: none;
 }
 
 p {
-    margin: 0;
-    padding: 0;
+	margin: 0;
+	padding: 0;
 }
 
-a{
-    color: #4e4e4e;
-    text-decoration: none;
-    cursor: pointer;
-    border-bottom: 2px solid #25E84c;
+a {
+	color: #4e4e4e;
+	text-decoration: none;
+	cursor: pointer;
+	border-bottom: 2px solid #25e84c;
 }
 
 .fade {
-    -webkit-animation: fade 1s infinite linear;
-    animation: fade 1s infinite linear;
-    animation-direction: alternate;
+	-webkit-animation: fade 1s infinite linear;
+	animation: fade 1s infinite linear;
+	animation-direction: alternate;
 }
 
 strong {
-    color: #4e4e4e;
-    cursor: pointer;
-
+	color: #4e4e4e;
+	cursor: pointer;
 }
 
 .disabled {
-    display: none;
+	display: none;
 }
 
+.support-btn-container {
+	position: relative;
+}
 button {
-    border: none;
-    background: radial-gradient(50% 50% at 50% 50%, #25E84C 36.98%, rgba(37, 232, 76, 0) 100%);
-    cursor: pointer;
-    outline: none;
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    transition: 0.3s;
-    font-size: 24px;
-    font-weight: 700;
-    color:#4e4e4e;
-    line-height: 150%;
-    position: fixed;
-    bottom: 50px;
-    right: 50px;
-    overflow: visible;
+	border: none;
+	background: radial-gradient(
+		50% 50% at 50% 50%,
+		#25e84c 36.98%,
+		rgba(37, 232, 76, 0) 100%
+	);
+	cursor: pointer;
+	outline: none;
+	width: 150px;
+	height: 150px;
+	border-radius: 50%;
+	transition: 0.3s;
+	font-size: 24px;
+	font-weight: 700;
+	color: #4e4e4e;
+	line-height: 150%;
+	position: fixed;
+	bottom: 50px;
+	right: 50px;
+	overflow: visible;
+	z-index: 1;
 }
 
 .thanks {
-    position: fixed;
-    bottom: 50px;
-    font-size: 16px;
-    font-weight: 700;
-    color:#4e4e4e;
-    line-height: 150%;
+	position: fixed;
+	bottom: 215px;
+	right: 133px;
+	font-size: 16px;
+	font-weight: 700;
+	color: #25e84c;
+	line-height: 150%;
+	opacity: 0;
+}
+.thanks > span {
+	transform-origin: bottom center;
+	position: absolute;
+	left: 0;
+	top: 0;
+	height: 90px;
+	width: 20px;
+	transition: 0.3s;
+}
+
+#t {
+	transform: rotate(0deg);
+}
+#h {
+	transform: rotate(0deg);
+}
+#a {
+	transform: rotate(0deg);
+}
+#n {
+	transform: rotate(0deg);
+}
+#k {
+	transform: rotate(0deg);
 }
 
 @keyframes fade {
-    0% {
-        opacity: .25;
-    }
-    
-    100% {
-        opacity: 1;
-    }
+	0% {
+		opacity: 0.25;
+	}
+
+	100% {
+		opacity: 1;
+	}
 }

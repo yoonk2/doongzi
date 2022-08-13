@@ -4,6 +4,8 @@ from django.shortcuts import redirect, render
 from .models import *
 from django.views.decorators.http import require_GET, require_POST
 from django.views.decorators.csrf import csrf_exempt
+import json
+from django.http import JsonResponse
 
 # Create your views here.
 
@@ -161,3 +163,14 @@ def invitation(request):
 def invitation_withname(request, name):
     ctx = {"name": name}
     return render(request, "invitation.html", context=ctx)
+
+
+@require_POST
+@csrf_exempt
+def support_ajax(request):
+    req = json.loads(request.body)
+    name = req["name"]
+    support = Support(name=name)
+    support.save()
+    support_length = Support.objects.count()
+    return JsonResponse({"supports": support_length})
