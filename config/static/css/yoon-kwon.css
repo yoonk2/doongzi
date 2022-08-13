@@ -93,6 +93,10 @@ button {
 	opacity: 0;
 }
 .thanks > span {
+	-webkit-transform-origin: bottom center;
+	-moz-transform-origin: bottom center;
+	-ms-transform-origin: bottom center;
+	-o-transform-origin: bottom center;
 	transform-origin: bottom center;
 	position: absolute;
 	left: 0;
@@ -105,18 +109,38 @@ button {
 }
 
 #t {
+	-webkit-transform: rotate(0deg);
+	-moz-transform: rotate(0deg);
+	-ms-transform: rotate(0deg);
+	-o-transform: rotate(0deg);
 	transform: rotate(0deg);
 }
 #h {
+	-webkit-transform: rotate(0deg);
+	-moz-transform: rotate(0deg);
+	-ms-transform: rotate(0deg);
+	-o-transform: rotate(0deg);
 	transform: rotate(0deg);
 }
 #a {
+	-webkit-transform: rotate(0deg);
+	-moz-transform: rotate(0deg);
+	-ms-transform: rotate(0deg);
+	-o-transform: rotate(0deg);
 	transform: rotate(0deg);
 }
 #n {
+	-webkit-transform: rotate(0deg);
+	-moz-transform: rotate(0deg);
+	-ms-transform: rotate(0deg);
+	-o-transform: rotate(0deg);
 	transform: rotate(0deg);
 }
 #k {
+	-webkit-transform: rotate(0deg);
+	-moz-transform: rotate(0deg);
+	-ms-transform: rotate(0deg);
+	-o-transform: rotate(0deg);
 	transform: rotate(0deg);
 }
 

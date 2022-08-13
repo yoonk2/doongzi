@@ -94,6 +94,9 @@ const onClickSupport = () => {
 	thanks.querySelectorAll("span").forEach((item, index) => {
 		item.style.color = "#" + randomColor
 		item.style.transform = `rotate(${index * 14 - randomDegree}deg)`
+		item.style.MozTransform = `rotate(${index * 14 - randomDegree}deg)`
+		item.style.WebkitTransform = `rotate(${index * 14 - randomDegree}deg)`
+		item.style.msTransform = `rotate(${index * 14 - randomDegree}deg)`
 	})
 	setTimeout(() => {
 		if (!multipleClick) {
@@ -108,6 +111,9 @@ const onClickSupport = () => {
 			}, 40)
 			thanks.querySelectorAll("span").forEach((item, index) => {
 				item.style.transform = `rotate(${-randomDegree}deg)`
+				item.style.MozTransform = `rotate(${-randomDegree}deg)`
+				item.style.WebkitTransform = `rotate(${-randomDegree}deg)`
+				item.style.msTransform = `rotate(${-randomDegree}deg)`
 			})
 			clicked = false
 		}
