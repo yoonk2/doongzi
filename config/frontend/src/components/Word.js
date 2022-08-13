@@ -115,11 +115,6 @@ function Word(props) {
 		likeRef.current.innerHTML = heart
 	}
 
-	setInterval(() => {
-		getWord()
-	}, 300000)
-	// 5분에 한 번씩 단어를 받아옴
-
 	useEffect(() => {
 		// elevateLetters()
 		moveImage()
