@@ -7,6 +7,20 @@ function Word(props) {
 	const likeRef = useRef()
 	const [word, setWord] = useState(props.word)
 
+	const setOpacity = (target) => {
+		let opacity = 0
+		const interval = setInterval(() => {
+			if (opacity < 1) {
+				opacity += 0.1
+				target.style.opacity = opacity
+				target.style.filter = `blur(${5 - 5 * opacity}px)`
+				console.log(target.style.opacity)
+			} else {
+				clearInterval(interval)
+			}
+		}, 40)
+	}
+
 	const elevateLetters = () => {
 		const letters = wordRef.current.querySelectorAll("span")
 		for (let i = 0; i < letters.length; i++) {
@@ -110,6 +124,7 @@ function Word(props) {
 		// elevateLetters()
 		moveImage()
 		setHeart()
+		setOpacity(wordRef.current)
 	}, [])
 
 	return (
@@ -118,6 +133,7 @@ function Word(props) {
 			onMouseEnter={mouseEnterFunc}
 			onMouseLeave={mouseLeaveFunc}
 			onClick={changeBgColor}
+			ref={wordRef}
 		>
 			<button id="likeBtn" onClick={() => likeWord(word.id)}>
 				<p ref={likeRef}>❤️</p>

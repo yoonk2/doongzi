@@ -7,6 +7,7 @@ import RankingModal from "../components/RankingModal.js"
 import styled from "styled-components"
 
 function DoonzgiPedia() {
+	const mainRef = useRef()
 	const getData = async () => {
 		const response = await fetch("https://doongzi.works/api/words/")
 		// const response = await fetch("http://127.0.0.1:8000/api/words/")
@@ -18,6 +19,19 @@ function DoonzgiPedia() {
 	function shuffle(array) {
 		array.sort(() => Math.random() - 0.5)
 		return array
+	}
+	const setOpacity = (target) => {
+		let opacity = 0
+		const interval = setInterval(() => {
+			if (opacity < 1) {
+				opacity += 0.1
+				target.style.opacity = opacity
+				target.style.filter = `blur(${5 - 5 * opacity}px)`
+				console.log(target.style.opacity)
+			} else {
+				clearInterval(interval)
+			}
+		}, 40)
 	}
 
 	let scrollDownList = [true, true, true]
@@ -72,6 +86,16 @@ function DoonzgiPedia() {
 		}
 	}
 
+	const onClickRankingView = () => {
+		if (viewRank == true) {
+			// setOpacity(mainRef.current.querySelectorAll(".word-wrapper"))
+		} else {
+			// 	mainRef.current.querySelectoAll(".word-wrapper").style.filter =
+			// 		"blur(5px)"
+		}
+		setViewRank(!viewRank)
+	}
+
 	const [viewRank, setViewRank] = useState(false)
 
 	const RankingToggleBtn = styled.button`
@@ -97,10 +121,8 @@ function DoonzgiPedia() {
 	}, [])
 	return (
 		<>
-			<main>
-				<RankingToggleBtn onClick={() => setViewRank(!viewRank)}>
-					💚
-				</RankingToggleBtn>
+			<main ref={mainRef}>
+				<RankingToggleBtn onClick={onClickRankingView}>💚</RankingToggleBtn>
 				<div className="word-wrapper">
 					<section
 						className="word-col"
