@@ -1,10 +1,36 @@
 import React from "react"
 import { useEffect, useState, useRef } from "react"
 import axios from "axios"
+import styled from "styled-components"
 
-function Word(props) {
+const Rank = styled.span`
+	width: 40px;
+	height: 30px;
+	padding: 3px;
+	box-sizing: border-box;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: #25e84c;
+	font-size: 1.2rem;
+	line-height: 1.2rem;
+	font-weight: bold;
+	margin-left: -55px;
+`
+const Votes = styled(Rank)`
+	width: ${(props) => props.width};
+	background-color: transparent;
+	font-weight: 500;
+	font-size: 1rem;
+	justify-content: flex-start;
+	margin: 0;
+	// align-self: flex-end;
+	position: absolute;
+	right: 10px;
+`
+function RankedWord(props) {
 	const wordRef = useRef()
-	const likeRef = useRef()
+	// const likeRef = useRef()
 	const [word, setWord] = useState(props.word)
 
 	const elevateLetters = () => {
@@ -14,8 +40,6 @@ function Word(props) {
 			letters[i].style.transition = `${i * 0.2 + 0.1}s`
 			letters[i].classList.remove("doong-animate")
 		}
-		wordRef.current.parentElement.querySelector(".word-type").style.opacity =
-			"1"
 	}
 	const removeElevatedLetters = () => {
 		const letters = wordRef.current.querySelectorAll("span")
@@ -25,8 +49,6 @@ function Word(props) {
 				letters[i].classList.add("doong-animate")
 			}
 		}
-		wordRef.current.parentElement.querySelector(".word-type").style.opacity =
-			"0"
 	}
 
 	const changeBgColor = () => {
@@ -82,25 +104,6 @@ function Word(props) {
 			})
 	}
 
-	const setHeart = () => {
-		const heartList = [
-			"🧡",
-			"💙",
-			"💚",
-			"💛",
-			"💜",
-			"🤎",
-			"❤️",
-			"💖",
-			"🥰",
-			"💝",
-			"❤️‍🔥",
-			"💕",
-		]
-		const heart = heartList[Math.floor(Math.random() * heartList.length)]
-		likeRef.current.innerHTML = heart
-	}
-
 	setInterval(() => {
 		getWord()
 	}, 300000)
@@ -109,7 +112,6 @@ function Word(props) {
 	useEffect(() => {
 		// elevateLetters()
 		moveImage()
-		setHeart()
 	}, [])
 
 	return (
@@ -119,20 +121,13 @@ function Word(props) {
 			onMouseLeave={mouseLeaveFunc}
 			onClick={changeBgColor}
 		>
-			<button id="likeBtn" onClick={() => likeWord(word.id)}>
-				<p ref={likeRef}>❤️</p>
-				<p style={word.likes >= 100 ? { fontSize: "12px" } : null}>
-					{word.likes}
-				</p>
-			</button>
-			{word.image ? (
-				<img src={word.image} alt={word.word} />
-			) : word.link ? (
-				<a href={word.link}>
-					<img src={word.link} alt={word.word} />
-				</a>
-			) : null}
-			<section className="word" key={word.id} ref={wordRef}>
+			<Rank>{props.rank}위</Rank>
+			<section
+				className="word"
+				key={word.id}
+				ref={wordRef}
+				style={{ position: "relative", width: "50vw" }}
+			>
 				{word.kor_word.split("").map((char, index) =>
 					word.doong_position ? (
 						<>
@@ -150,40 +145,12 @@ function Word(props) {
 						</>
 					) : null
 				)}
-				{word.word_type === "starts_with" ? (
-					<p
-						className="word-type starts-with"
-						// onClick={blurWords(word.word_type)}
-					>
-						둥으로 시작하는
-					</p>
-				) : word.word_type === "ends_with" ? (
-					<p
-						className="word-type ends-with"
-						// onClick={blurWords(word.word_type)}
-					>
-						둥으로 끝나는
-					</p>
-				) : word.word_type === "contains" ? (
-					<p
-						className="word-type contains"
-						// onClick={blurWords(word.word_type)}
-					>
-						둥을 포함하는
-					</p>
-				) : word.word_type === "new_word" ? (
-					<p
-						className="word-type new-word"
-						// onClick={blurWords(word.word_type)}
-					>
-						신조어
-					</p>
-				) : null}
+				<Votes width={"100px"} height={"30px"}>
+					⇢{word.likes}표
+				</Votes>
 			</section>
-
-			<p className="definition">{word.definition}</p>
 		</div>
 	)
 }
 
-export default Word
+export default RankedWord

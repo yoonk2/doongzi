@@ -47,7 +47,7 @@ main::before {
 	left: 0;
 	/* filter: blur(10px); */
 	/* -webkit-filter: blur(10px); */
-	z-index: 10;
+	z-index: 11;
 }
 main::after {
 	content: "";
@@ -61,7 +61,7 @@ main::after {
 	left: 0;
 	/* filter: blur(10px); */
 	/* -webkit-filter: blur(10px); */
-	z-index: 10;
+	z-index: 11;
 }
 
 .word-col {

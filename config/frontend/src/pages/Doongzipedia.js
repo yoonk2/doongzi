@@ -1,7 +1,9 @@
 import React from "react"
 import { useEffect, useState, useRef } from "react"
 import "./Doongzipedia.css"
-import Word from "./components/Word.js"
+import Word from "../components/Word.js"
+import RankedWord from "../components/RankedWord.js"
+import styled from "styled-components"
 
 function DoonzgiPedia() {
 	const getData = async () => {
@@ -16,6 +18,12 @@ function DoonzgiPedia() {
 		array.sort(() => Math.random() - 0.5)
 		return array
 	}
+
+	let wordRankList = [...wordList]
+	wordRankList.sort((a, b) => {
+		return b.likes - a.likes
+	})
+	wordRankList = wordRankList.slice(0, 5)
 
 	let scrollDownList = [true, true, true]
 	const scroll = (element, scrollDown) => {
@@ -39,9 +47,8 @@ function DoonzgiPedia() {
 		}
 	}
 
-	let pausedList = [false, false, false]
-
 	const columns = useRef([])
+	let pausedList = [false, false, false]
 
 	const autoScroll = () => {
 		setInterval(() => {
@@ -70,6 +77,42 @@ function DoonzgiPedia() {
 		}
 	}
 
+	const [viewRank, setViewRank] = useState(false)
+	const RankingModal = styled.div`
+		${viewRank ? "display: flex;" : "display: none;"}
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background-color: white;
+		padding: 0 20vw;
+		flex-direction: column;
+		justify-content: center;
+		gap: 10px;
+		z-index: 10;
+		& > div {
+			width: 700px;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+		}
+	`
+	const RankingToggleBtn = styled.button`
+		position: fixed;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		top: 10px;
+		left: 10px;
+		z-index: 15;
+		width: 30px;
+		height: 30px;
+		border-radius: 50%;
+		/* background-color: #fff; */
+		background: none;
+		border: none;
+	`
 	useEffect(() => {
 		getData()
 
@@ -79,6 +122,9 @@ function DoonzgiPedia() {
 	return (
 		<>
 			<main>
+				<RankingToggleBtn onClick={() => setViewRank(!viewRank)}>
+					💚
+				</RankingToggleBtn>
 				<div className="word-wrapper">
 					<section
 						className="word-col"
@@ -120,6 +166,13 @@ function DoonzgiPedia() {
 					</>
 				) : null}
 			</main>
+			<RankingModal>
+				<div>
+					{wordRankList.map((word, index) => (
+						<RankedWord key={word.id} word={word} rank={index + 1} />
+					))}
+				</div>
+			</RankingModal>
 		</>
 	)
 }
