@@ -112,6 +112,7 @@ function DoonzgiPedia() {
 		/* background-color: #fff; */
 		background: none;
 		border: none;
+		cursor: pointer;
 	`
 	useEffect(() => {
 		getData()
@@ -122,7 +123,7 @@ function DoonzgiPedia() {
 	return (
 		<>
 			<main ref={mainRef}>
-				<RankingToggleBtn onClick={onClickRankingView}>💚</RankingToggleBtn>
+				<RankingToggleBtn onClick={onClickRankingView}>🏆</RankingToggleBtn>
 				<div className="word-wrapper">
 					<section
 						className="word-col"
