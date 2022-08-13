@@ -18,6 +18,11 @@ main {
 	display: flex;
 	flex-direction: column;
 }
+img {
+	height: 32px;
+	padding: 3px;
+	margin-bottom: -8px;
+}
 
 .hidden {
 	display: none;
