@@ -27,7 +27,7 @@ media
 
 # Distribution / packaging
 .Python
-build/
+# build/
 develop-eggs/
 dist/
 downloads/
@@ -307,3 +307,4 @@ pip-selfcheck.json
 
 *.pem
 *.code-workspace
+node_modules
