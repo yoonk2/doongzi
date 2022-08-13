@@ -124,7 +124,7 @@ function Word(props) {
 		// elevateLetters()
 		moveImage()
 		setHeart()
-		setOpacity(wordRef.current)
+		// setOpacity(wordRef.current)
 	}, [])
 
 	return (
@@ -133,7 +133,7 @@ function Word(props) {
 			onMouseEnter={mouseEnterFunc}
 			onMouseLeave={mouseLeaveFunc}
 			onClick={changeBgColor}
-			ref={wordRef}
+			// ref={wordRef}
 		>
 			<button id="likeBtn" onClick={() => likeWord(word.id)}>
 				<p ref={likeRef}>❤️</p>
