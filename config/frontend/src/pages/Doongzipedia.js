@@ -3,6 +3,7 @@ import { useEffect, useState, useRef } from "react"
 import "./Doongzipedia.css"
 import Word from "../components/Word.js"
 import RankedWord from "../components/RankedWord.js"
+import RankingModal from "../components/RankingModal.js"
 import styled from "styled-components"
 
 function DoonzgiPedia() {
@@ -18,12 +19,6 @@ function DoonzgiPedia() {
 		array.sort(() => Math.random() - 0.5)
 		return array
 	}
-
-	let wordRankList = [...wordList]
-	wordRankList.sort((a, b) => {
-		return b.likes - a.likes
-	})
-	wordRankList = wordRankList.slice(0, 5)
 
 	let scrollDownList = [true, true, true]
 	const scroll = (element, scrollDown) => {
@@ -78,28 +73,7 @@ function DoonzgiPedia() {
 	}
 
 	const [viewRank, setViewRank] = useState(false)
-	const RankingModal = styled.div`
-		${viewRank ? "display: flex;" : "display: none;"}
-		position: fixed;
-		top: 0;
-		left: 0;
-		width: 100vw;
-		height: 100%;
-		background-color: white;
-		padding: 0 20vw;
-		box-sizing: border-box;
-		flex-direction: column;
-		justify-content: center;
-		gap: 10px;
-		z-index: 10;
-		& > div {
-			width: 450px;
-			display: flex;
-			flex-direction: column;
-			justify-content: center;
-			margin: 0 auto;
-		}
-	`
+
 	const RankingToggleBtn = styled.button`
 		position: fixed;
 		display: flex;
@@ -168,13 +142,7 @@ function DoonzgiPedia() {
 					</>
 				) : null}
 			</main>
-			<RankingModal>
-				<div>
-					{wordRankList.map((word, index) => (
-						<RankedWord key={word.id} word={word} rank={index + 1} />
-					))}
-				</div>
-			</RankingModal>
+			{viewRank ? <RankingModal viewRank={viewRank}></RankingModal> : null}
 		</>
 	)
 }

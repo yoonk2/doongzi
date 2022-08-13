@@ -113,7 +113,8 @@ function RankedWord(props) {
 
 	useEffect(() => {
 		// elevateLetters()
-		moveImage()
+		// moveImage()
+		getWord()
 	}, [])
 
 	return (
