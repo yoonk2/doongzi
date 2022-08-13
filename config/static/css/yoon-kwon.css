@@ -95,6 +95,8 @@ button {
 	height: 90px;
 	width: 20px;
 	transition: 0.3s;
+	text-shadow: #fff 0 0 7px, #fff 0 0 5px, #fff 0 0 5px, #fff 0 0 5px,
+		#fff 0 0 3px, #fff 0 0 2px, #fff 0 0;
 }
 
 #t {
