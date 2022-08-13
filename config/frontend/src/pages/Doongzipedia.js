@@ -83,19 +83,21 @@ function DoonzgiPedia() {
 		position: fixed;
 		top: 0;
 		left: 0;
-		width: 100%;
+		width: 100vw;
 		height: 100%;
 		background-color: white;
 		padding: 0 20vw;
+		box-sizing: border-box;
 		flex-direction: column;
 		justify-content: center;
 		gap: 10px;
 		z-index: 10;
 		& > div {
-			width: 700px;
+			width: 450px;
 			display: flex;
 			flex-direction: column;
 			justify-content: center;
+			margin: 0 auto;
 		}
 	`
 	const RankingToggleBtn = styled.button`

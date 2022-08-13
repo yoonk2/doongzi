@@ -15,7 +15,8 @@ const Rank = styled.span`
 	font-size: 1.2rem;
 	line-height: 1.2rem;
 	font-weight: bold;
-	margin-left: -55px;
+	/* left: 10px; */
+	margin-left: -60px;
 `
 const Votes = styled(Rank)`
 	width: ${(props) => props.width};
@@ -26,7 +27,8 @@ const Votes = styled(Rank)`
 	margin: 0;
 	// align-self: flex-end;
 	position: absolute;
-	right: 10px;
+	right: -10px;
+	left: auto;
 `
 function RankedWord(props) {
 	const wordRef = useRef()
@@ -126,7 +128,7 @@ function RankedWord(props) {
 				className="word"
 				key={word.id}
 				ref={wordRef}
-				style={{ position: "relative", width: "50vw" }}
+				style={{ position: "relative", width: "450px", margin: "0 auto" }}
 			>
 				{word.kor_word.split("").map((char, index) =>
 					word.doong_position ? (
@@ -146,7 +148,7 @@ function RankedWord(props) {
 					) : null
 				)}
 				<Votes width={"100px"} height={"30px"}>
-					⇢{word.likes}표
+					⇢ {word.likes}표
 				</Votes>
 			</section>
 		</div>
