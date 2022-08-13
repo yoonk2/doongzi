@@ -90,8 +90,8 @@ const onClickSupport = () => {
 		}
 	}, 40)
 	const randomDegree = Math.floor(Math.random() * 60)
+	const randomColor = Math.floor(Math.random() * 16777215).toString(16)
 	thanks.querySelectorAll("span").forEach((item, index) => {
-		const randomColor = Math.floor(Math.random() * 16777215).toString(16)
 		item.style.color = "#" + randomColor
 		item.style.transform = `rotate(${index * 14 - randomDegree}deg)`
 	})
