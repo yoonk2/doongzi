@@ -35,7 +35,7 @@ urlpatterns = (
         path("", include("main.urls")),
         path("projects/", include("projects.urls")),
         path("api/", include(router.urls)),
-        path("doongzipedia/", include("doongzipedia.urls")),
+        path("", include("doongzipedia.urls")),
         path("yoon/", RedirectView.as_view(pattern_name="projects:yoon-kwon")),
         path("yulaylist/", RedirectView.as_view(pattern_name="projects:yulaylist")),
         path("bestnayoun/", RedirectView.as_view(pattern_name="projects:bestnayoun")),
