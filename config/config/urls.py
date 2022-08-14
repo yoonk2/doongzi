@@ -35,7 +35,6 @@ urlpatterns = (
         path("", include("main.urls")),
         path("projects/", include("projects.urls")),
         path("api/", include(router.urls)),
-        path("", include("doongzipedia.urls")),
         path("yoon/", RedirectView.as_view(pattern_name="projects:yoon-kwon")),
         path("yulaylist/", RedirectView.as_view(pattern_name="projects:yulaylist")),
         path("bestnayoun/", RedirectView.as_view(pattern_name="projects:bestnayoun")),
@@ -44,6 +43,7 @@ urlpatterns = (
             r"^static/(?P<path>.*)$", serve, {"document_root": settings.STATIC_ROOT}
         ),
         path("how-to-doongzi/", include("how_to_doongzi.urls")),
+        path("", include("doongzipedia.urls")),
     ]
     + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
     + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
