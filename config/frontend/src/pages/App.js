@@ -16,7 +16,7 @@ function App() {
 			<Routes>
 				<Route path="/" element={<Main />} />
 				<Route path="/doongzipedia" element={<Main />} />
-				<Route path="/yoon" element={<Yoon />} />
+				<Route path="/yooon" element={<Yoon />} />
 			</Routes>
 		</BrowserRouter>
 	)
