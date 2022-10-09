@@ -36,4 +36,5 @@ urlpatterns = [
     path("cylee", chaeyoung, name="cylee"),
     path("yulaylist", yullee, name="yulaylist"),
     path("bestnayoun", nayoun, name="bestnayoun"),
+    path("people", people, name="people"),
 ]

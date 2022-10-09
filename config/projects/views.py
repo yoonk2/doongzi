@@ -174,3 +174,9 @@ def support_ajax(request):
     support.save()
     support_length = Support.objects.count()
     return JsonResponse({"supports": support_length})
+
+
+def people(request):
+    people = People.objects.order_by("?")
+    ctx = {"people": people}
+    return render(request, "people.html", context=ctx)
