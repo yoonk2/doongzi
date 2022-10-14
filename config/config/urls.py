@@ -36,9 +36,13 @@ urlpatterns = (
         path("projects/", include("projects.urls")),
         path("api/", include(router.urls)),
         path("yoon/", RedirectView.as_view(pattern_name="projects:yoon-kwon")),
+        path("yoon", RedirectView.as_view(pattern_name="projects:yoon-kwon")),
         path("yulaylist/", RedirectView.as_view(pattern_name="projects:yulaylist")),
+        path("yulaylist", RedirectView.as_view(pattern_name="projects:yulaylist")),
         path("bestnayoun/", RedirectView.as_view(pattern_name="projects:bestnayoun")),
+        path("bestnayoun", RedirectView.as_view(pattern_name="projects:bestnayoun")),
         path("cylee/", RedirectView.as_view(pattern_name="projects:cylee")),
+        path("cylee", RedirectView.as_view(pattern_name="projects:cylee")),
         re_path(
             r"^static/(?P<path>.*)$", serve, {"document_root": settings.STATIC_ROOT}
         ),
