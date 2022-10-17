@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="ko/kr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>행운의 편지</title>
+</head>
+<body>
+    <audio src="static/music/letter.mp3"><p>안들림?</p></audio>
+    <p class="two">2</p><p class="two">2</p>
+</body>
+<style>
+    body {
+        background-color: blue;
+    }
+    .two {
+        font-size: 100px;
+        color: white;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transition: 1s;
+        transform: rotateY(180deg)
+        perspective(1000px);
+    }
+    .two:hover {
+        transform: rotateY(0deg)
+    }
+    #outerCircleText {
+color: #fff;
+position: absolute;top: 0;left: 0;z-index: 3000;cursor: default;
+}
+#outerCircleText div {position: relative;}
+#outerCircleText div div {position: absolute;top: 0;left: 0;text-align: center;}
+</style>
+<script>
+    function cursorAnimation(){
+
+var msg = "이 편지는 영국에서 최초로 시작되어 일년에 한바퀴를 돌면서 받는 사람에게 행운을 주었고 지금은 당신에게로 옮겨졌습니다. 당신은 김나연에게 생일 축하 인사를 보내야 합니다. 복사를 해도 좋습니다. 혹 미신이라 하실지 모르지만 사실입니다. 영국에서 권윤이라는 사람은 2022년에 이 편지를 받았습니다. 그는 나연에게 생일을 축하한다고 카톡을 보냈습니다. 며칠 뒤에 복권이 당첨되어 20억을 받았습니다. 어떤 이는 이 편지를 받았으나 나연의 생일이라는 사실을 잊었습니다. 그는 곧 사직되었습니다. 나중에야 이 사실을 알고 나연에게 7통의 편지를 보냈는데 다시 좋은 직장을 얻었습니다. 미국의 케네디 대통령은 이 편지를 받았지만 그냥 버렸습니다. 결국 9일 후 그는 암살당했습니다. 기억해 주세요. 나연에게 축하인사를 보내면 7년의 행운이 있을 것이고 그렇지 않으면 3년의 불행이 있을 것입니다. 그리고 이 편지를 버리거나 낙서를 해서는 절대로 안됩니다. 이 편지를 받은 사람은 행운이 깃들것입니다. 힘들겠지만 좋은게 좋다고 생각하세요. 7년의 행운을 빌면서...";
+
+// Set font's style size for calculating dimensions
+// Set to number of desired pixels font size (decimal and negative numbers not allowed)
+var size = 14;
+
+// Set both to 1 for plain circle, set one of them to 2 for oval
+// Other numbers & decimals can have interesting effects, keep these low (0 to 3)
+var circleY = 1; var circleX = 1;
+
+// The larger this divisor, the smaller the spaces between letters
+// (decimals allowed, not negative numbers)
+var letter_spacing = 4;
+
+// The larger this multiplier, the bigger the circle/oval
+// (decimals allowed, not negative numbers, some rounding is applied)
+var diameter = 30;
+
+// Rotation speed, set it negative if you want it to spin clockwise (decimals allowed)
+var rotation = 0.1;
+
+// This is not the rotation speed, its the reaction speed, keep low!
+// Set this to 1 or a decimal less than one (decimals allowed, not negative numbers)
+var speed = 0.5;
+
+////////////////////// Stop Editing //////////////////////
+
+if (!window.addEventListener && !window.attachEvent || !document.createElement) return;
+
+msg = msg.split('');
+var n = msg.length - 1, a = Math.round(size * diameter * 0.20), currStep = 20,
+
+ymouse = a * circleY + 20, xmouse = a * circleX + 20, y = [], x = [], Y = [], X = [],
+
+o = document.createElement('div'), oi = document.createElement('div'),
+
+b = document.compatMode && document.compatMode != "BackCompat"? document.documentElement : document.body,
+
+mouse = function(e){
+
+ e = e || window.event;
+ ymouse = !isNaN(e.pageY)? e.pageY : e.clientY; // y-position
+ xmouse = !isNaN(e.pageX)? e.pageX : e.clientX; // x-position
+
+},
+
+makecircle = function(){ // rotation/positioning
+
+ if(init.nopy){
+
+  o.style.top = (b || document.body).scrollTop + 'px';
+  o.style.left = (b || document.body).scrollLeft + 'px';
+
+ };
+
+ currStep -= rotation;
+
+ for (var d, i = n; i > -1; --i){ // makes the circle
+
+  d = document.getElementById('iemsg' + i).style;
+  d.top = Math.round(y[i] + a * Math.sin((currStep + i) / letter_spacing) * circleY - 15) + 'px';
+  d.left = Math.round(x[i] + a * Math.cos((currStep + i) / letter_spacing) * circleX) + 'px';
+
+ };
+
+},
+
+
+
+drag = function(){ // makes the resistance
+
+  y[0] = Y[0] += (ymouse - Y[0]) * speed;
+ x[0] = X[0] += (xmouse - 20 - X[0]) * speed;
+ for (var i = n; i > 0; --i){
+  y[i] = Y[i] += (y[i-1] - Y[i]) * speed;
+  x[i] = X[i] += (x[i-1] - X[i]) * speed;
+ };
+
+ makecircle();
+
+},
+
+
+
+init = function(){ // appends message divs, & sets initial values for positioning arrays
+
+ if(!isNaN(window.pageYOffset)){
+
+  ymouse += window.pageYOffset;
+  xmouse += window.pageXOffset;
+
+ } else init.nopy = true;
+
+ for (var d, i = n; i > -1; --i){
+
+  d = document.createElement('div'); d.id = 'iemsg' + i;
+  d.style.height = d.style.width = a + 'px';
+  d.appendChild(document.createTextNode(msg[i]));
+  oi.appendChild(d); y[i] = x[i] = Y[i] = X[i] = 0;
+
+ };
+
+ o.appendChild(oi); document.body.appendChild(o);
+
+ setInterval(drag, 25);
+
+},
+
+
+
+ascroll = function(){
+
+ ymouse += window.pageYOffset;
+ xmouse += window.pageXOffset;
+ window.removeEventListener('scroll', ascroll, false);
+
+};
+
+
+
+o.id = 'outerCircleText'; o.style.fontSize = size + 'px';
+
+
+
+if (window.addEventListener){
+
+ window.addEventListener('load', init, false);
+ document.addEventListener('mouseover', mouse, false);
+ document.addEventListener('mousemove', mouse, false);
+  if (/Apple/.test(navigator.vendor))
+   window.addEventListener('scroll', ascroll, false);
+
+}
+
+else if (window.attachEvent){
+
+ window.attachEvent('onload', init);
+ document.attachEvent('onmousemove', mouse);
+
+};
+
+
+
+};
+cursorAnimation();
+</script>
+</html>
