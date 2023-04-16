@@ -21,7 +21,7 @@ designerTitle.addEventListener("click", () => {
 developerTitle.addEventListener("click", () => {
 	if (developerDetails[0].classList.contains("hidden")) {
 		developerDetails.forEach((item) => item.classList.toggle("hidden"))
-		developerTitle.innerHTML = `<a href="https://github.com/yoonk2">개발자</a>다.`
+		developerTitle.innerHTML = `<a href="https://github.com/yoonk2">개발자 꿈나무</a>다.`
 		developerTitleAnchor.classList.remove("fade")
 		studentTitleAnchor.classList.add("fade")
 	}
