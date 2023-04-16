@@ -22,6 +22,12 @@ img {
 	height: 32px;
 	padding: 3px;
 	margin-bottom: -8px;
+	transition: 1s;
+}
+
+img:hover {
+	transform: scale(20);
+	transition: 20s;
 }
 
 .hidden {
