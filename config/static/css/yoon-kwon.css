@@ -28,6 +28,16 @@ img {
 img:hover {
 	transform: scale(20);
 	transition: 20s;
+	z-index: 100;
+	position: relative;
+}
+@media screen and (min-width: 900px) {
+	img:active {
+		transform: scale(10);
+		transition: 1s;
+		z-index: 100;
+		position: relative;
+	}
 }
 
 .hidden {
