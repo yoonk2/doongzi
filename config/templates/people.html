@@ -15,7 +15,7 @@
             <div class="card card_{{forloop.counter}}" style='z-index: -{{forloop.counter}}'onclick="onClickCard({{forloop.counter}})">
                 <div class="face back">
                     {% with 'images/people/'|add:person.image as image_static %}
-                    <a href="https://doongzi.works/{% if person.kor_name == "이채영"%}cylee{% elif person.kor_name == "이율리" %}yulaylist{% elif person.kor_name == "김나연" %}bestnayoun{% elif person.kor_name == "권윤" %}yoon{% endif %}/"><img src="{% static image_static %}" alt="{{person.kor_name}}(이)가 인사하고 있는 모습이다."></a>
+                    <a href="https://doongzi.kr/{% if person.kor_name == "이채영"%}cylee{% elif person.kor_name == "이율리" %}yulaylist{% elif person.kor_name == "김나연" %}bestnayoun{% elif person.kor_name == "권윤" %}yoon{% endif %}/"><img src="{% static image_static %}" alt="{{person.kor_name}}(이)가 인사하고 있는 모습이다."></a>
                     {% endwith %}
                     <article>
                         <p><span>{{ person.kor_name }}</span> <span>{{person.eng_name}}</span></p>

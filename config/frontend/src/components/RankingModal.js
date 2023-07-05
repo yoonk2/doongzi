@@ -41,7 +41,7 @@ function RankingModal() {
 		}, 40)
 	}
 	const getData = async () => {
-		const response = await fetch("https://doongzi.works/api/words/")
+		const response = await fetch("https://doongzi.kr/api/words/")
 		// const response = await fetch("http://127.0.0.1:8000/api/words/")
 		const data = await response.json()
 		setWordList(data)

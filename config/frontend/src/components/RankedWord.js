@@ -83,7 +83,7 @@ function RankedWord(props) {
 	const likeWord = (id) => {
 		let likes = (word.likes += 1)
 		axios
-			.patch(`https://doongzi.works/api/words/${id}/`, {
+			.patch(`https://doongzi.kr/api/words/${id}/`, {
 				likes: likes,
 			})
 			.then((res) => {
@@ -96,7 +96,7 @@ function RankedWord(props) {
 	}
 	const getWord = () => {
 		axios
-			.get(`https://doongzi.works/api/words/${word.id}/`)
+			.get(`https://doongzi.kr/api/words/${word.id}/`)
 			.then((res) => {
 				setWord(res.data)
 				// console.log(res.data)
