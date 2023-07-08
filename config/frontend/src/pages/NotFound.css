@@ -75,7 +75,8 @@ p {
 .button:first-of-type {
     background-color: white;
     border: 1px solid #25e84c;
-    color: #25e84c
+    color: #25e84c;
+    height: 18px;
 }
 
 .button:hover {
