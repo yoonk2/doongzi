@@ -9,6 +9,7 @@ import {
 } from "react-router-dom"
 import Main from "./Main"
 import Yoon from "./Yoon"
+import NotFound from "./NotFound"
 
 function App() {
 	return (
@@ -17,6 +18,7 @@ function App() {
 				<Route path="/" element={<Main />} />
 				<Route path="/doongzipedia" element={<Main />} />
 				<Route path="/yooon" element={<Yoon />} />
+				<Route path='*' element={<NotFound />}/>
 			</Routes>
 		</BrowserRouter>
 	)
