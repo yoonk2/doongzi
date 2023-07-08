@@ -10,7 +10,7 @@ section.text {
     word-break: keep-all;
 }
 
-p {
+.text p {
     font-size: 24px;
     line-height: 150%;
     font-weight: 700;
