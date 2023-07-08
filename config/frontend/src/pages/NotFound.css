@@ -24,7 +24,7 @@ section.text {
     align-items: center;
 }
 
-.sadEmoji {
+.text .sadEmoji {
     font-size: 64px;
     margin: 0;
     animation: sad 3s infinite linear;
