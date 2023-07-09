@@ -15,6 +15,7 @@ function Tilt() {
     position: absolute;
     top: 30vh;
     left: 50%;
+    transition: all 0.1s;
   `;
   const Circle2 = styled.div`
     width: 100px;
@@ -26,6 +27,7 @@ function Tilt() {
     position: absolute;
     top: 25vh;
     left: 50%;
+    transition: all 0.1s;
   `;
 
   const requestOrientationPermission = () => {
@@ -33,7 +35,6 @@ function Tilt() {
       .then((response) => {
         if (response === "granted") {
           window.addEventListener("deviceorientation", handleOrientation);
-          handleOrientation()
         }
       })
       .catch(console.error);
@@ -42,8 +43,6 @@ function Tilt() {
   const handleOrientation = (event) => {
     const { alpha, beta, gamma } = event;
     setGyroData({ alpha, beta, gamma });
-    circle1Ref.current.style.transform = `translate(0, ${event.beta}px)`;
-    circle2Ref.current.style.transform = `translate(0, ${-event.beta}px)`;
   };
 
   const moveCircle = (event) => {
@@ -63,16 +62,24 @@ function Tilt() {
         하이
         <button onClick={requestOrientationPermission}>퍼미션</button>
         {gyroData && (
-          <ul>
-            <li>Alpha: {Math.round(gyroData.alpha)}</li>
-            <li>Beta: {Math.round(gyroData.beta)}</li>
-            <li>Gamma: {Math.round(gyroData.gamma)}</li>
-          </ul>
+          <>
+            <ul>
+              <li>Alpha: {Math.round(gyroData.alpha)}</li>
+              <li>Beta: {Math.round(gyroData.beta)}</li>
+              <li>Gamma: {Math.round(gyroData.gamma)}</li>
+            </ul>
+            <Circle 
+            ref={circle1Ref} 
+            style={{transform:`translate(0, ${gyroData.beta}px)`}}
+            />
+            <Circle2 
+            ref={circle2Ref} 
+            style={{transform:`translate(0, ${-gyroData.beta}px)`}}
+            />
+          </>
 
         )}
 
-        <Circle ref={circle1Ref}/>
-        <Circle2 ref={circle2Ref}/>
       </section>
     </>
   );
