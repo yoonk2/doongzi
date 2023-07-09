@@ -141,7 +141,7 @@ function DoonzgiPedia() {
 						<div className="word-wrapper">
 							<section
 								className="word-col"
-								ref={(element) => {
+							    ref={(element) => {
 									columns.current[1] = element
 								}}
 							>
