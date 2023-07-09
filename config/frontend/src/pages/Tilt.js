@@ -42,6 +42,8 @@ function Tilt() {
   const handleOrientation = (event) => {
     const { alpha, beta, gamma } = event;
     setGyroData({ alpha, beta, gamma });
+    circle1Ref.current.style.transform = `translate(0, ${event.beta}px)`;
+    circle2Ref.current.style.transform = `translate(0, ${-event.beta}px)`;
   };
 
   const moveCircle = (event) => {
