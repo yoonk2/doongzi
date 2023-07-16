@@ -7,6 +7,7 @@ import {
 	Link,
 	BrowserRouter,
 } from "react-router-dom"
+import NewMain from "./NewMain"
 import Main from "./Main"
 import Yoon from "./Yoon"
 import Tilt from "./Tilt"
@@ -19,6 +20,7 @@ function App() {
 				<Route path="/" element={<Main />} />
 				<Route path="/doongzipedia" element={<Main />} />
 				<Route path="/yooon" element={<Yoon />} />
+				<Route path="/new" element={<NewMain />} />
 				<Route path="/tilt" element={<Tilt />} />
 				<Route path='*' element={<NotFound />}/>
 			</Routes>

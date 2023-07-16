@@ -16,6 +16,7 @@ function Tilt() {
     top: 30vh;
     left: 50%;
     transition: all 0.1s;
+    transform: translate(0, 0);
   `;
   const Circle2 = styled.div`
     width: 100px;
@@ -79,6 +80,20 @@ function Tilt() {
           </>
 
         )}
+
+        <>
+          <ul>
+            <li>Alpha: 10</li>
+            <li>Beta: 10</li>
+            <li>Gamma: 5</li>
+          </ul>
+          <Circle 
+          // style={{transform:`translate(0, ${gyroData.beta}px)`}}
+          />
+          <Circle2 
+          // style={{transform:`translate(0, ${-gyroData.beta}px)`}}
+          />
+        </>
 
       </section>
     </>
