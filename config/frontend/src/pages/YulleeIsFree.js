@@ -3,7 +3,6 @@ import { useEffect, useState, useRef } from "react"
 import styled from "styled-components"
 import AOS from "aos"
 import "aos/dist/aos.css"
-import freeyullee from "../images/freeyullee.png"
 
 function YulleeIsFree() {
   AOS.init()
@@ -44,7 +43,7 @@ function YulleeIsFree() {
     <Section data-aos="zoom-in-up"  data-aos-delay="300" >율리야!</Section>
     <Section data-aos="zoom-in-up" data-aos-delay="300" >퇴사를</Section>
     <Section data-aos="zoom-in-up"  data-aos-delay="300">축하한다!</Section>
-    <Section data-aos="zoom-in-up"  data-aos-delay="300"><img src={freeyullee}/></Section>
+    <Section data-aos="zoom-in-up"  data-aos-delay="300"><img src="https://doongzi.kr/media/image/freeyullee.png"/></Section>
     </Main> 
 }
 export default YulleeIsFree
