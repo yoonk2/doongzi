@@ -45,9 +45,9 @@ function YulleeIsFree() {
     }
   `
 	return <Main>
-    <Section data-aos="zoom-in-up">율리야!</Section>
-    <Section data-aos="zoom-in-up">퇴사를</Section>
-    <Section data-aos="zoom-in-up">축하한다!</Section>
+    <Section data-aos="zoom-in-up"  data-aos-delay="300" >율리야!</Section>
+    <Section data-aos="zoom-in-up" data-aos-delay="300" >퇴사를</Section>
+    <Section data-aos="zoom-in-up"  data-aos-delay="300">축하한다!</Section>
     </Main>
 }
 export default YulleeIsFree
