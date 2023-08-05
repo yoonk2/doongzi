@@ -32,9 +32,12 @@ router.register("words", views.WordView, basename="words")
 urlpatterns = (
     [
         path("admin/", admin.site.urls),
+        path("admin", admin.site.urls),
         path("", include("main.urls")),
         path("projects/", include("projects.urls")),
+        path("projects", include("projects.urls")),
         path("api/", include(router.urls)),
+        path("api", include(router.urls)),
         path("yoon/", RedirectView.as_view(pattern_name="projects:yoon-kwon")),
         path("yoon", RedirectView.as_view(pattern_name="projects:yoon-kwon")),
         path("yulaylist/", RedirectView.as_view(pattern_name="projects:yulaylist")),
