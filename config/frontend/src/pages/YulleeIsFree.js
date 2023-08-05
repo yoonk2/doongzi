@@ -43,7 +43,7 @@ function YulleeIsFree() {
     <Section data-aos="zoom-in-up"  data-aos-delay="300" >율리야!</Section>
     <Section data-aos="zoom-in-up" data-aos-delay="300" >퇴사를</Section>
     <Section data-aos="zoom-in-up"  data-aos-delay="300">축하한다!</Section>
-    <Section data-aos="zoom-in-up"  data-aos-delay="300"><img src="https://doongzi.kr/media/image/freeyullee.png"/></Section>
+    <Section data-aos="zoom-in-up"  data-aos-delay="300"><img src="https://doongzi.kr/static/images/freeyullee.png"/></Section>
     </Main> 
 }
 export default YulleeIsFree
