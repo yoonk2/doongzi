@@ -12,6 +12,7 @@ import Main from "./Main"
 import Yoon from "./Yoon"
 import Tilt from "./Tilt"
 import NotFound from "./NotFound"
+import YulleeIsFree from "./YulleeIsFree"
 
 function App() {
 	return (
@@ -22,6 +23,7 @@ function App() {
 				<Route path="/yooon" element={<Yoon />} />
 				<Route path="/new" element={<NewMain />} />
 				<Route path="/tilt" element={<Tilt />} />
+				<Route path="/yullee-is-free" element={<YulleeIsFree />} />
 				<Route path='*' element={<NotFound />}/>
 			</Routes>
 		</BrowserRouter>
